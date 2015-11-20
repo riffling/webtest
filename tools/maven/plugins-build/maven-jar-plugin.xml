@@ -1,0 +1,12 @@
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-jar-plugin</artifactId>
+    <configuration>
+        <archive>
+            <manifest>
+                <mainClass>org.sonatype.mavenbook.weather.Main</mainClass>
+                <addClasspath>true</addClasspath>
+            </manifest>
+        </archive>
+    </configuration>
+</plugin>

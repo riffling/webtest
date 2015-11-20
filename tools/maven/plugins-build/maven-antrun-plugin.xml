@@ -1,0 +1,182 @@
+<build>
+    <plugins>
+        <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <version>${maven-antrun.version}</version>
+            <dependencies>
+                <dependency>
+                    <groupId>org.apache.ant</groupId>
+                    <artifactId>ant</artifactId>
+                    <version>1.9.3</version>
+                </dependency>
+                <dependency>
+                    <groupId>ant-contrib</groupId>
+                    <artifactId>ant-contrib</artifactId>
+                    <version>${ant-contrib.version}</version>
+                    <exclusions>
+                        <exclusion>
+                            <groupId>ant</groupId>
+                            <artifactId>ant</artifactId>
+                        </exclusion>
+                    </exclusions>
+                </dependency>
+            </dependencies>
+            <executions>
+                <execution>
+                    <id>part-resources</id>
+                    <phase>generate-resources</phase>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                    <configuration>
+                        <target>
+                            <!-- here we unpack the "development-ready" artifact -->
+                            <unzip src="${com.hp.cloud.identity:idm-service:war}" dest="${isola.output.directory}/content" />
+                            <unzip src="${com.hp.propel.migrator:migrator-overlay-part:zip}" dest="${isola.output.directory}/content" />
+                            <!-- Now let's remove all development tweaks, so that output has only production files in it -->
+
+                            <!-- There are various ways to cleanup content; here we use a separate fileset that replaces content files as needed. 
+                                Other options could include inplace replacements, deletion of files, etc. -->
+                            <copy todir="${isola.output.directory}/content" overwrite="true">
+                                <fileset dir="src/main/content-overlay" />
+                            </copy>
+
+                            <!-- The only reason for having 'bundle' outside 'src/main/resources' is that IDEA file explorer organizes resources 
+                                as java packages, which is inconvenient here. I know, this reason is rather practical than good. Feel free to move it under resources, then you 
+                                don't need the following copy command. -->
+                            <copy todir="${isola.output.directory}/bundle" overwrite="true">
+                                <fileset dir="src/main/bundle" />
+                            </copy>
+
+                            <!-- with POM packaging, we don't get much for free; so now, let's package the result and attach it -->
+                            <zip destfile="${project.build.directory}/${project.build.finalName}.zip" basedir="${isola.output.directory}" />
+                            <attachartifact file="${project.build.directory}/${project.build.finalName}.zip" type="zip" />
+
+                            <!-- compute checksum to make the artifact cacheable by preparator right from jenkins build -->
+                            <exec dir="${project.build.directory}" executable="md5sum" osfamily="unix"
+                                output="${project.build.directory}/${project.build.finalName}.zip.md5" failonerror="true">
+                                <arg value="${project.build.finalName}.zip" />
+                            </exec>
+                            <exec dir="${project.build.directory}" executable="sed" osfamily="unix" failonerror="true">
+                                <arg value="-i" />
+                                <arg value="s: .*$::;" />
+                                <arg value="${project.build.finalName}.zip.md5" />
+                            </exec>
+                        </target>
+                    </configuration>
+                </execution>
+                <!-- standard node build actions -->
+                <execution>
+                    <id>setup</id>
+                    <phase>initialize</phase>
+                    <configuration>
+                        <!-- Make sure to export all these properties -->
+                        <exportAntProperties>true</exportAntProperties>
+                        <target>
+                            <condition property="maven.test.skip" value="true">
+                                <isset property="skipTests" />
+                            </condition>
+                            <condition property="npm.launcher" value="npm.cmd" else="npm">
+                                <os family="windows" />
+                            </condition>
+                            <condition property="bower.launcher" value="${node_modules.dir}/.bin/bower.cmd" else="${node_modules.dir}/.bin/bower">
+                                <os family="windows" />
+                            </condition>
+                            <condition property="grunt.launcher" value="${node_modules.dir}/.bin/grunt.cmd" else="${node_modules.dir}/.bin/grunt">
+                                <os family="windows" />
+                            </condition>
+                        </target>
+                    </configuration>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                </execution>
+                <execution>
+                    <id>npm-bower-install</id>
+                    <phase>process-classes</phase>
+                    <configuration>
+                        <target xmlns:antcontrib="antlib:net.sf.antcontrib">
+                            <echo message="========== installing public npm dependencies ===================" />
+                            <exec executable="${npm.launcher}" dir="${project.basedir}" failonerror="true">
+                                <arg value="install" />
+                            </exec>
+                            <echo message="========== installing public bower dependencies ===================" />
+                            <exec executable="${bower.launcher}" dir="${project.basedir}" failonerror="true">
+                                <arg value="install" />
+                            </exec>
+                        </target>
+                    </configuration>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                </execution>
+                <execution>
+                    <id>grunt-build</id>
+                    <phase>prepare-package</phase>
+                    <configuration>
+                        <target xmlns:antcontrib="antlib:net.sf.antcontrib">
+                            <echo message="========== grunt ci ===================" />
+                            <exec executable="${grunt.launcher}" dir="${project.basedir}" failonerror="true">
+                                <arg value="mvn:build" />
+                            </exec>
+                        </target>
+                    </configuration>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                </execution>
+                <execution>
+                    <id>clear-npm-bower-deps</id>
+                    <phase>generate-sources</phase>
+                    <configuration>
+                        <target xmlns:antcontrib="antlib:net.sf.antcontrib">
+                            <antcontrib:if>
+                                <and>
+                                    <isset property="update" />
+                                    <available file="${bower_components.dir}" type="dir" />
+                                </and>
+                                <antcontrib:then>
+                                    <echo message="========== clean bower dependencies ===================" />
+                                    <delete failonerror="false" removeNotFollowedSymlinks="true">
+                                        <fileset dir="${bower_components.dir}" followsymlinks="false" />
+                                    </delete>
+                                </antcontrib:then>
+                            </antcontrib:if>
+                            <antcontrib:if>
+                                <and>
+                                    <isset property="update" />
+                                    <available file="${node_modules.dir}" type="dir" />
+                                </and>
+                                <antcontrib:then>
+                                    <echo message="========== clean npm dependencies ===================" />
+                                    <delete failonerror="false" removeNotFollowedSymlinks="true">
+                                        <fileset dir="${node_modules.dir}" followsymlinks="false" />
+                                    </delete>
+                                </antcontrib:then>
+                            </antcontrib:if>
+                        </target>
+                    </configuration>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                </execution>
+                <execution>
+                    <id>test</id>
+                    <phase>test</phase>
+                    <configuration>
+                        <target xmlns:antcontrib="antlib:net.sf.antcontrib" unless="maven.test.skip">
+                            <echo message="========== grunt test ===================" />
+                            <exec executable="${grunt.launcher}" dir="${project.basedir}" failonerror="true">
+                                <arg value="mvn:test" />
+                            </exec>
+                        </target>
+                    </configuration>
+                    <goals>
+                        <goal>run</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+
+    </plugins>
+</build>

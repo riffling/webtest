@@ -1,0 +1,20 @@
+<reporting>
+    <plugins>
+        <!--FindBugs插件。maven goal：findbugs:findbugs -->
+        <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>findbugs-maven-plugin</artifactId>
+            <version>2.5.1</version>
+            <configuration>
+                <threshold>High</threshold>
+                <effort>Default</effort>
+                <findbugsXmlOutput>true</findbugsXmlOutput>
+                <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
+                <xmlOutput>true</xmlOutput>
+                <formats>
+                    <format>html</format>
+                </formats>
+            </configuration>
+        </plugin>
+    </plugins>
+</reporting>

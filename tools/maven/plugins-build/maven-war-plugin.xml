@@ -1,0 +1,40 @@
+
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-war-plugin</artifactId>
+    <configuration>
+        <failOnMissingWebXml>false</failOnMissingWebXml>
+        <warSourceDirectory>${project.build.directory}/dist</warSourceDirectory>
+        
+        <warName>idm-service</warName>
+        <webXml>src/main/webapp/WEB-INF/web.xml</webXml>
+        <overlays>
+            <overlay>
+                <groupId>com.hp.cloud.identity</groupId>
+                <artifactId>idm-ui</artifactId>
+                <type>war</type>
+            </overlay>
+        </overlays>
+        <archive>
+            <manifestEntries>
+                <Specification-Title>${project.name}</Specification-Title>
+                <Specification-Version>${project.version}</Specification-Version>
+                <Specification-MajorVersion>${parsedVersion.majorVersion}</Specification-MajorVersion>
+                <Specification-MinorVersion>${parsedVersion.minorVersion}</Specification-MinorVersion>
+                <Specification-PatchVersion>${parsedVersion.incrementalVersion}</Specification-PatchVersion>
+                <Specification-Label>${parsedVersion.qualifier}</Specification-Label>
+
+                <Implementation-Version>${build.number}</Implementation-Version>
+                <Implementation-BuildNumber>${ci.buildnumber}</Implementation-BuildNumber>
+                <Implementation-GitCommitHash>${git.commit.id.abbrev}</Implementation-GitCommitHash>
+                <Implementation-GitDescribe>${git.commit.id.describe}</Implementation-GitDescribe>
+                <Implementation-GitTags>${git.tags}</Implementation-GitTags>
+                <Implementation-Timestamp>${maven.build.timestamp}</Implementation-Timestamp>
+            </manifestEntries>
+        </archive>
+        <manifest>
+            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+        </manifest>
+    </configuration>
+</plugin>
+

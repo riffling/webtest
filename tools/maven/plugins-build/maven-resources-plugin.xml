@@ -1,0 +1,32 @@
+
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-resources-plugin</artifactId>
+            <version>2.6</version>
+            <executions>
+                <execution>
+                    <id>part-resources-filtering</id>
+                    <phase>generate-resources</phase>
+                    <goals>
+                        <goal>copy-resources</goal>
+                    </goals>
+                    <configuration>
+                        <outputDirectory>${isola.output.directory}</outputDirectory>
+                        <resources>
+                            <!-- filter part.xml to get project version there -->
+                            <resource>
+                                <directory>src/main</directory>
+                                <filtering>true</filtering>
+                                <includes>
+                                    <include>part.xml</include>
+                                </includes>
+                            </resource>
+                        </resources>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
