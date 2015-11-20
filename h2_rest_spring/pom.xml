@@ -1,0 +1,135 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>org.third.test</groupId>
+        <artifactId>mvn</artifactId>
+        <version>1.0</version>
+    </parent>
+    <artifactId>spring_wadl</artifactId>
+    <packaging>war</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring.version>4.1.6.RELEASE</spring.version>
+        <spring.security.version>4.0.1.RELEASE</spring.security.version>
+        <jaxb2.version>0.6.4</jaxb2.version>
+    </properties>
+
+    <dependencies>
+        <!-- <dependency> <groupId>com.autentia.web.rest</groupId> <artifactId>spring-wadl-generator</artifactId> <version>1.1-SNAPSHOT</version> 
+            </dependency> -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpmime</artifactId>
+            <version>4.4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>fluent-hc</artifactId>
+            <version>4.2.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.5</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jvnet.jaxb2_commons</groupId>
+            <artifactId>jaxb2-basics-runtime</artifactId>
+            <version>${jaxb2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>2.2.6</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-jsp-api</artifactId>
+            <version>8.0.24</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <!-- Identity Management -->
+        <dependency>
+            <groupId>com.hp.cloud.identity</groupId>
+            <artifactId>idm-domain-api</artifactId>
+            <version>1.8.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hp.cloud.identity</groupId>
+            <artifactId>idm-login-api</artifactId>
+            <version>1.8.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.hp.cloud.identity</groupId>
+            <artifactId>idm-identity-api</artifactId>
+            <version>1.8.0-SNAPSHOT</version>
+        </dependency>
+        
+        <!-- security realted scan -->
+        <dependency>
+            <groupId>org.owasp</groupId>
+            <artifactId>dependency-check-maven</artifactId>
+            <version>1.3.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>${project.artifactId}</finalName>
+
+        <plugins>
+            <plugin>
+                <groupId>org.mortbay.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>com.autentia.web.rest</groupId>
+                <artifactId>wadl-zipper-maven-plugin</artifactId>
+                <version>1.1-SNAPSHOT</version>
+                <configuration>
+                    <wadlUri>http://localhost:8080/${project.artifactId}/rest/wadl</wadlUri>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>wadl-zip</id>
+                        <phase>integration-test</phase>
+                        <goals>
+                            <goal>zip</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

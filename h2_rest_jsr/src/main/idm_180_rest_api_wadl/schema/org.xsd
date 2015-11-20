@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="org" type="organization"/>
+
+  <xs:complexType name="organization">
+    <xs:sequence/>
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="displayName" type="xs:string"/>
+    <xs:attribute name="iconUrl" type="xs:string"/>
+    <xs:attribute name="portalTitle" type="xs:string"/>
+    <xs:attribute name="portalWelcomeMsg" type="xs:string"/>
+    <xs:attribute name="portalFooterMsg" type="xs:string"/>
+    <xs:attribute name="portalShowLegalNotice" type="xs:boolean"/>
+    <xs:attribute name="portalLegalNoticeUrl" type="xs:string"/>
+    <xs:attribute name="disclaimerText" type="xs:string"/>
+    <xs:attribute name="securityLevel" type="xs:string"/>
+    <xs:attribute name="themeName" type="xs:string"/>
+  </xs:complexType>
+</xs:schema>
+

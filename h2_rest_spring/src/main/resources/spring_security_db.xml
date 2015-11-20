@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:security="http://www.springframework.org/schema/security" xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
+        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+<!-- org.springframework.security.core.userdetails.jdbc.JdbcDaoImpl
+org.springframework.security.provisioning.JdbcUserDetailsManager -->
+	<context:component-scan base-package="com.stevex.demo" />
+	<security:http auto-config="true">
+		<security:intercept-url pattern="/admin" access="ROLE_ADMIN" />
+		<security:intercept-url pattern="/*" access="ROLE_USER" />
+		<security:form-login />
+	</security:http>
+	<security:authentication-manager>
+		<security:authentication-provider>
+			<security:jdbc-user-service data-source-ref="dataSource"
+				group-authorities-by-username-query="select g.id, g.group_name, ga.authority
+                                    from groups g, group_members gm, group_authorities ga
+                                where gm.username = ? and g.id = ga.group_id and g.id = gm.group_id" />
+		</security:authentication-provider>
+	</security:authentication-manager>
+	<jdbc:embedded-database id="dataSource">
+		<jdbc:script location="classpath:security-schema.sql" />
+		<jdbc:script location="classpath:users.sql" />
+	</jdbc:embedded-database>
+</beans>

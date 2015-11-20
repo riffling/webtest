@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://wadl.dev.java.net/2009/02" xmlns:tcll="http://www.autentia.com/2013/BasicCollections" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:sml="http://www.hp.com/schema/samlConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.hp.com/schema/samlConfig file:///C:/Users/gongyo/workspace/mvntest/spring_wadl/src/main/webapp/idm_saml/schema/samlConfig.xsd">
+    <doc title="IDM SAML" />
+    <grammars>
+        <include href="schema/samlConfig.xsd" />
+    </grammars>
+    <resources base="http://SGDLITVM0996.hpswlabs.adapps.hp.com:18080/idm">
+        <resource path="/api/scim/organizations/{ORG_PARAM}/samlconfig/{SAML_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="SAML_PARAM" style="template" type="xs:string" required="true" />
+            <method id="updateSamlConfig" name="PUT">
+                <response status="200">
+                    <representation xmlns:sml="http://www.hp.com/schema/samlConfig" element="sml:samlConfig" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/samlconfig/{SAML_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="SAML_PARAM" style="template" type="xs:string" required="true" />
+            <method id="deleteSamlConfig" name="DELETE">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/samlconfig/{SAML_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="SAML_PARAM" style="template" type="xs:string" required="true" />
+            <method id="patchSamlConfig" name="PATCH">
+                <response status="200">
+                    <representation xmlns:sml="http://www.hp.com/schema/samlConfig" element="sml:samlConfig" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/samlconfig/">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <method id="createNewSamlConfig" name="POST">
+                <response status="200">
+                    <representation xmlns:sml="http://www.hp.com/schema/samlConfig" element="sml:samlConfig" mediaType="application/xml" />
+                    <representation xmlns:sml="http://www.hp.com/schema/samlConfig" element="sml:samlConfig" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/samlconfig/">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <method id="getAllSamlConfigs" name="GET">
+                <request>
+                    <param name="start" style="query" type="xs:integer" default="0" required="false" />
+                    <param name="page-size" style="query" type="xs:integer" default="20" required="false" />
+                    <param name="order-by" style="query" type="xs:string" default="displayName" required="false" />
+                    <param name="sort" style="query" type="xs:string" default="ascending" required="false" />
+                </request>
+                <response status="200">
+                    <representation xmlns:pgd="http://www.hp.com/schema/pagedResponse" element="pgd:pagedResponse" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/samlconfig/{SAML_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="SAML_PARAM" style="template" type="xs:string" required="true" />
+            <method id="getSamlConfigById" name="GET">
+                <response status="200">
+                    <representation xmlns:sml="http://www.hp.com/schema/samlConfig" element="sml:samlConfig" mediaType="application/json" />
+                    <representation xmlns:sml="http://www.hp.com/schema/samlConfig" element="sml:samlConfig" mediaType="application/xml" />
+                </response>
+            </method>
+        </resource>
+    </resources>
+</application>

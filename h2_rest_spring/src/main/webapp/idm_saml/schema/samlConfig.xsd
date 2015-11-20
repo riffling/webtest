@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://www.hp.com/schema/samlConfig"
+    targetNamespace="http://www.hp.com/schema/samlConfig">
+    <xs:element name="samlConfig" type="samlConfig" />
+    <xs:complexType name="samlConfig">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string" />
+            <xs:element name="displayName" type="xs:string" />
+            <xs:element name="description" type="xs:string" />
+            <xs:element name="entityUrl" type="xs:string" />
+            <xs:element name="type" type="xs:string" />
+            <xs:element name="type2ds" type="xs:string" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+

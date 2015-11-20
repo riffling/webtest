@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="link" type="link"/>
+
+  <xs:element name="media-type" type="mediaType"/>
+
+  <xs:element name="version" type="version"/>
+
+  <xs:complexType name="version">
+    <xs:sequence>
+      <xs:element name="media-types" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="media-type" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="links" minOccurs="0">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element ref="link" minOccurs="0" maxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="status" type="xs:string"/>
+    <xs:attribute name="updated" type="xs:dateTime"/>
+    <xs:attribute name="id" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="mediaType">
+    <xs:sequence/>
+    <xs:attribute name="base" type="xs:string"/>
+    <xs:attribute name="type" type="xs:string"/>
+  </xs:complexType>
+
+  <xs:complexType name="link">
+    <xs:sequence/>
+    <xs:attribute name="href" type="xs:anyURI" use="required"/>
+    <xs:attribute name="type" type="xs:string"/>
+    <xs:attribute name="rel" type="xs:string"/>
+  </xs:complexType>
+</xs:schema>
+

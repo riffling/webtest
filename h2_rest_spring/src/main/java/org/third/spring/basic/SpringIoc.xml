@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+	<bean id="spring_memory_userDetailService" class="org.third.spring.security.provider.SpringInMemoryUserDetailsManager">
+		<constructor-arg index="0">
+			<props>
+				<prop key="admin">adminpwd,enabled,authority1_admin, authority2_role</prop>
+			</props>
+		</constructor-arg>
+	</bean>
+
+	<bean id="springAuthenticationProvider" class="org.third.spring.security.provider.SpringDaoAuthenticationProvider">
+		<!-- <property name="tokenFactory" ref="tokenFactory" /> <property name="tokenValidator" ref="validator" /> <property name="configuration" 
+			ref="idmConfig" /> <property name="connectionService" ref="connectionService" /> <property name="idMAccessTokenRestApi" value="idm/v0/api/token/access_token" 
+			/> -->
+		<property name="userDetailsService" ref="spring_memory_userDetailService" />
+	</bean>
+
+	<bean id="anotherBean" class="org.third.spring.basic.AnotherBean" />
+	<bean id="yetAntherBean" class="org.third.spring.basic.YetAnotherBean" />
+	<bean id="complexBean" class="org.third.spring.basic.ComplexBean">
+		<constructor-arg>
+			<ref bean="anotherBean" />
+		</constructor-arg>
+		<constructor-arg>
+			<ref bean="yetAntherBean" />
+		</constructor-arg>
+		<constructor-arg index="2">
+			<value type="int">1</value>
+		</constructor-arg>
+
+		<!--java.util.Properties -->
+		<property name="people">
+			<props>
+				<prop key="name">Spirti.J</prop>
+				<prop key="age">25</prop>
+			</props>
+		</property>
+
+		<property name="comeList">
+			<list>
+				<!-- 配置文件中的<value>之间也不可以带空格spring不处理空格 -->
+				<value>list中的第一个元素,下一个元素是其他bean的引用</value>
+				<ref bean="anotherBean" />
+			</list>
+		</property>
+
+		<property name="someMap">
+			<map>
+				<!-- 测试:当出现同名的key 时 后面的会覆盖前面的 -->
+				<entry key="key-String" value="我是字符串甲" />
+				<entry>
+					<key>
+						<value>key-String</value>
+					</key>
+					<value>我是字符串乙</value>
+				</entry>
+
+				<!-- 两种写法是等效的 -->
+				<entry key="key-ref" value-ref="anotherBean"></entry>
+
+				<entry>
+					<key>
+						<value>key-ref</value>
+					</key>
+					<!-- ref在这里提供一个协作者相当于一个<value>作为一个单独的元素 -->
+					<ref bean="anotherBean" />
+				</entry>
+			</map>
+		</property>
+
+		<property name="someSet">
+			<set>
+				<!-- 测试:当set转化为数组时,与配置的顺序有关系 -->
+				<value>我是字符串丙</value>
+				<ref bean="anotherBean" />
+			</set>
+
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,834 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://wadl.dev.java.net/2009/02" xmlns:tcll="http://www.autentia.com/2013/BasicCollections">
+    <doc title="REST Service WADL" />
+    <grammars>
+        <include href="schema/metadata.xsd" />
+        <include href="schema/role.xsd" />
+        <include href="schema/organizationList.xsd" />
+        <include href="schema/baseGroupRepresentationCollection.xsd" />
+        <include href="schema/responseEntity.xsd" />
+        <include href="schema/baseAuthenticationConfiguration.xsd" />
+        <include href="schema/authenticationSuccessResponse.xsd" />
+        <include href="schema/authenticationResponse.xsd" />
+        <include href="schema/abstractUser.xsd" />
+        <include href="schema/request_token.xsd" />
+        <include href="schema/keystoneConfiguration.xsd" />
+        <include href="schema/baseGroupRepresentation.xsd" />
+        <include href="schema/samlConfig.xsd" />
+        <include href="schema/metadataList.xsd" />
+        <include href="schema/loginResponse.xsd" />
+        <include href="schema/requestTokenDetails.xsd" />
+        <include href="schema/org.xsd" />
+        <include href="schema/organizationInfoView.xsd" />
+        <include href="schema/versionInfo.xsd" />
+        <include href="schema/roleList.xsd" />
+        <include href="schema/version.xsd" />
+        <include href="schema/token.xsd" />
+        <include href="schema/keystoneConfigurationList.xsd" />
+        <include href="schema/baseUserRepresentation.xsd" />
+        <include href="schema/abstractGroup.xsd" />
+        <include href="schema/organization.xsd" />
+        <include href="schema/pagedResponse.xsd" />
+    </grammars>
+    <resources base="http://sgdlitvm0117.hpswlabs.adapps.hp.com:18080/idm-service">
+    <!-- <resources base="http://localhost:8280/spring_wadl/spring-wadl"> -->
+      <!--   <resource path="/rest/wadl">
+            <method id="generateWadl" name="GET">
+                <response status="200">
+                    <representation element="application" mediaType="application/xml" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/rest/schema/{classTypeName}">
+            <param name="classTypeName" style="template" type="xs:string" required="true" />
+            <method id="generateSchema" name="GET">
+                <response status="200">
+                    <representation element="xs:string" mediaType="application/xml" />
+                </response>
+            </method>
+        </resource> -->
+        <resource path="/api/scim/organizations/{ORG_PARAM}/groups/{GROUP_PARAM}/representations">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="GROUP_PARAM" style="template" type="xs:string" required="true" />
+            <method id="createGroupRepresentation" name="POST">
+                <response status="200">
+                    <representation xmlns:bsg="http://www.hp.com/schema/baseGroupRepresentation" element="bsg:baseGroupRepresentation"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/groups/{GROUP_PARAM}/representations/{GROUP_REPRESENTATION_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="GROUP_PARAM" style="template" type="xs:string" required="true" />
+            <param name="GROUP_REPRESENTATION_PARAM" style="template" type="xs:string" required="true" />
+            <method id="getGroupRepresentation" name="GET">
+                <response status="200">
+                    <representation xmlns:bsg="http://www.hp.com/schema/baseGroupRepresentation" element="bsg:baseGroupRepresentation"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/groups/{GROUP_PARAM}/representations">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="GROUP_PARAM" style="template" type="xs:string" required="true" />
+            <method id="getGroupRepresentations" name="GET">
+                <response status="200">
+                    <representation xmlns:bsgcll="http://www.hp.com/schema/baseGroupRepresentationCollection" element="bsgcll:baseGroupRepresentationCollection"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/groups/{GROUP_PARAM}/representations/{GROUP_REPRESENTATION_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="GROUP_PARAM" style="template" type="xs:string" required="true" />
+            <param name="GROUP_REPRESENTATION_PARAM" style="template" type="xs:string" required="true" />
+            <method id="deleteGroupRepresentation" name="DELETE">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/groups/{GROUP_PARAM}/representations/{GROUP_REPRESENTATION_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="GROUP_PARAM" style="template" type="xs:string" required="true" />
+            <param name="GROUP_REPRESENTATION_PARAM" style="template" type="xs:string" required="true" />
+            <method id="patchGroupRepresentation" name="PATCH">
+                <response status="200">
+                    <representation xmlns:bsg="http://www.hp.com/schema/baseGroupRepresentation" element="bsg:baseGroupRepresentation"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/groups/{GROUP_PARAM}/representations/{GROUP_REPRESENTATION_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="GROUP_PARAM" style="template" type="xs:string" required="true" />
+            <param name="GROUP_REPRESENTATION_PARAM" style="template" type="xs:string" required="true" />
+            <method id="putGroupRepresentation" name="PUT">
+                <response status="200">
+                    <representation xmlns:bsg="http://www.hp.com/schema/baseGroupRepresentation" element="bsg:baseGroupRepresentation"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/configurations">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <method id="createAuthenticationConfiguration" name="POST">
+                <response status="200">
+                    <representation xmlns:bst="http://www.hp.com/schema/baseAuthenticationConfiguration" element="bst:baseAuthenticationConfiguration"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/configurations/{CONFIG_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="CONFIG_PARAM" style="template" type="xs:string" required="true" />
+            <method id="replaceAuthenticationConfiguration" name="PUT">
+                <response status="200">
+                    <representation xmlns:bst="http://www.hp.com/schema/baseAuthenticationConfiguration" element="bst:baseAuthenticationConfiguration"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/configurations/{CONFIG_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="CONFIG_PARAM" style="template" type="xs:string" required="true" />
+            <method id="updateAuthenticationConfiguration" name="PATCH">
+                <response status="200">
+                    <representation xmlns:bst="http://www.hp.com/schema/baseAuthenticationConfiguration" element="bst:baseAuthenticationConfiguration"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/configurations/{CONFIG_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="CONFIG_PARAM" style="template" type="xs:string" required="true" />
+            <method id="deleteAuthenticationConfiguration" name="DELETE">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/configurations">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <method id="getAuthenticationConfigurations" name="GET">
+                <response status="200">
+                    <representation xmlns:pgd="http://www.hp.com/schema/pagedResponse" element="pgd:pagedResponse" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/configurations/{CONFIG_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="CONFIG_PARAM" style="template" type="xs:string" required="true" />
+            <method id="getAuthenticationConfiguration" name="GET">
+                <response status="200">
+                    <representation xmlns:bst="http://www.hp.com/schema/baseAuthenticationConfiguration" element="bst:baseAuthenticationConfiguration"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/keystoneConfigurations">
+            <method id="createNewKeystoneConfiguration" name="POST">
+                <response status="200">
+                    <representation xmlns:kys="http://www.hp.com/schema/keystoneConfiguration" element="kys:keystoneConfiguration"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/keystoneConfigurations/{id}">
+            <param name="id" style="template" type="xs:string" required="true" />
+            <method id="updateKeystoneConfiguration" name="PUT">
+                <response status="200">
+                    <representation xmlns:kys="http://www.hp.com/schema/keystoneConfiguration" element="kys:keystoneConfiguration"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/keystoneConfigurations/{id}">
+            <param name="id" style="template" type="xs:string" required="true" />
+            <method id="deleteKeystoneConfiguration" name="DELETE">
+                <response status="200">
+                    <representation xmlns:rsp="http://www.springframework.org/schema/responseEntity" element="rsp:responseEntity"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/keystoneConfigurations/{configId}">
+            <param name="configId" style="template" type="xs:string" required="true" />
+            <method id="getKeystoneConfigurationById" name="GET">
+                <response status="200">
+                    <representation xmlns:kys="http://www.hp.com/schema/keystoneConfiguration" element="kys:keystoneConfiguration"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+       <!--  <resource path="/api/scim/keystoneConfigurations">
+            <method id="getAllKeystoneConfigurations" name="GET">
+                <response status="200">
+                    <representation xmlns:kyst="http://www.hp.com/schema/keystoneConfigurationList" element="kyst:keystoneConfigurationList"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource> -->
+        <resource path="/api/scim/roles">
+            <method id="getAllRoles" name="GET">
+                <response status="200">
+                    <representation xmlns:bsgcll="http://www.hp.com/schema/baseGroupRepresentationCollection" element="bsgcll:baseGroupRepresentationCollection"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/roles/{name}">
+            <param name="name" style="template" type="xs:string" required="true" />
+            <method id="getSingleRoleByName" name="GET">
+                <response status="200">
+                    <representation xmlns:Rol="http://www.hp.com/schema/role" element="Rol:role" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/roles/{name}">
+            <param name="name" style="template" type="xs:string" required="true" />
+            <method id="deleteRole" name="DELETE">
+                <response status="200">
+                    <representation xmlns:rsp="http://www.springframework.org/schema/responseEntity" element="rsp:responseEntity"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/roles/{name}">
+            <param name="name" style="template" type="xs:string" required="true" />
+            <method id="updateRole" name="PUT">
+                <response status="200">
+                    <representation xmlns:Rol="http://www.hp.com/schema/role" element="Rol:role" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/roles/{name}">
+            <param name="name" style="template" type="xs:string" required="true" />
+            <method id="headRoleByName" name="HEAD">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/api/scim/roles">
+            <method id="createNewRole" name="POST">
+                <response status="200">
+                    <representation xmlns:Rol="http://www.hp.com/schema/role" element="Rol:role" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/roles">
+            <method id="headAllRoles" name="HEAD">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/users/{USER_PARAM}/representations">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="USER_PARAM" style="template" type="xs:string" required="true" />
+            <method id="createRepresentation" name="POST">
+                <response status="200">
+                    <representation xmlns:bss="http://www.hp.com/schema/baseUserRepresentation" element="bss:baseUserRepresentation"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/users/{USER_PARAM}/representations/{REPRESENTATION_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="USER_PARAM" style="template" type="xs:string" required="true" />
+            <param name="REPRESENTATION_PARAM" style="template" type="xs:string" required="true" />
+            <method id="getRepresentation" name="GET">
+                <response status="200">
+                    <representation xmlns:bss="http://www.hp.com/schema/baseUserRepresentation" element="bss:baseUserRepresentation"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/users/{USER_PARAM}/representations">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="USER_PARAM" style="template" type="xs:string" required="true" />
+            <method id="getRepresentations" name="GET">
+                <response status="200">
+                    <representation xmlns:bsgcll="http://www.hp.com/schema/baseGroupRepresentationCollection" element="bsgcll:baseGroupRepresentationCollection"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/users/{USER_PARAM}/representations/{REPRESENTATION_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="USER_PARAM" style="template" type="xs:string" required="true" />
+            <param name="REPRESENTATION_PARAM" style="template" type="xs:string" required="true" />
+            <method id="deleteRepresentation" name="DELETE">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/users/{USER_PARAM}/representations/{REPRESENTATION_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="USER_PARAM" style="template" type="xs:string" required="true" />
+            <param name="REPRESENTATION_PARAM" style="template" type="xs:string" required="true" />
+            <method id="patchRepresentation" name="PATCH">
+                <response status="200">
+                    <representation xmlns:bss="http://www.hp.com/schema/baseUserRepresentation" element="bss:baseUserRepresentation"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/users/{USER_PARAM}/representations/{REPRESENTATION_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="USER_PARAM" style="template" type="xs:string" required="true" />
+            <param name="REPRESENTATION_PARAM" style="template" type="xs:string" required="true" />
+            <method id="putRepresentation" name="PUT">
+                <response status="200">
+                    <representation xmlns:bss="http://www.hp.com/schema/baseUserRepresentation" element="bss:baseUserRepresentation"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/version-info">
+            <method id="getBuildVersionInfo" name="GET">
+                <response status="200">
+                    <representation xmlns:vrs="http://www.hp.com/schema/versionInfo" element="vrs:versionInfo" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/users">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <method id="getUsers" name="GET">
+                <request>
+                    <param name="start" style="query" type="xs:integer" default="0" required="false" />
+                    <param name="page-size" style="query" type="xs:integer" default="20" required="false" />
+                    <param name="order-by" style="query" type="xs:string" default="displayName" required="false" />
+                    <param name="sort" style="query" type="xs:string" default="ascending" required="false" />
+                    <param name="searchText" style="query" type="xs:string" default="" required="false" />
+                    <param name="scope" style="query" type="xs:string" default="" required="false" />
+                </request>
+                <response status="200">
+                    <representation xmlns:pgd="http://www.hp.com/schema/pagedResponse" element="pgd:pagedResponse" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/users/{USER_ID}/groups">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="USER_ID" style="template" type="xs:string" required="true" />
+            <method id="getGroups" name="GET">
+                <response status="200">
+                    <representation xmlns:bsgcll="http://www.hp.com/schema/baseGroupRepresentationCollection" element="bsgcll:baseGroupRepresentationCollection"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/users/{USER_ID}/roles">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="USER_ID" style="template" type="xs:string" required="true" />
+            <method id="getRoles" name="GET">
+                <response status="200">
+                    <representation xmlns:bsgcll="http://www.hp.com/schema/baseGroupRepresentationCollection" element="bsgcll:baseGroupRepresentationCollection"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/users/{USER_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="USER_PARAM" style="template" type="xs:string" required="true" />
+            <method id="getUser" name="GET">
+                <request>
+                    <param name="scope" style="query" type="xs:string" default="" required="false" />
+                </request>
+                <response status="200">
+                    <representation xmlns:bstr="http://www.hp.com/schema/abstractUser" element="bstr:abstractUser" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/users/{USER_ID}/roles/{ROLE_ID}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="USER_ID" style="template" type="xs:string" required="true" />
+            <param name="ROLE_ID" style="template" type="xs:string" required="true" />
+            <method id="hasRole" name="GET">
+                <response status="200">
+                    <representation xmlns:Rol="http://www.hp.com/schema/role" element="Rol:role" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/users/{USER_PARAM}/groups/{GROUP_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="USER_PARAM" style="template" type="xs:string" required="true" />
+            <param name="GROUP_PARAM" style="template" type="xs:string" required="true" />
+            <method id="deleteUserFromGroup" name="DELETE">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/users">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <method id="createNewUser" name="POST">
+                <response status="200">
+                    <representation xmlns:bstr="http://www.hp.com/schema/abstractUser" element="bstr:abstractUser" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/users/{USER_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="USER_PARAM" style="template" type="xs:string" required="true" />
+            <method id="patchUser" name="PATCH">
+                <response status="200">
+                    <representation xmlns:bstr="http://www.hp.com/schema/abstractUser" element="bstr:abstractUser" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/users/{USER_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="USER_PARAM" style="template" type="xs:string" required="true" />
+            <method id="deleteUser" name="DELETE">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/users/{USER_ID}/groups/{GROUP_ID}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="USER_ID" style="template" type="xs:string" required="true" />
+            <param name="GROUP_ID" style="template" type="xs:string" required="true" />
+            <method id="isMember" name="GET">
+                <response status="200">
+                    <representation xmlns:bstrc="http://www.hp.com/schema/abstractGroup" element="bstrc:abstractGroup"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/users/{USER_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="USER_PARAM" style="template" type="xs:string" required="true" />
+            <method id="putUser" name="PUT">
+                <response status="200">
+                    <representation xmlns:bstr="http://www.hp.com/schema/abstractUser" element="bstr:abstractUser" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/users/{USER_PARAM}/groups">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="USER_PARAM" style="template" type="xs:string" required="true" />
+            <method id="addGroupToUser" name="POST">
+                <response status="200">
+                    <representation xmlns:bstr="http://www.hp.com/schema/abstractUser" element="bstr:abstractUser" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/groups">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <method id="createAbstractGroup" name="POST">
+                <response status="200">
+                    <representation xmlns:bstrc="http://www.hp.com/schema/abstractGroup" element="bstrc:abstractGroup"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/groups">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <method id="getAbstractGroups" name="GET">
+                <request>
+                    <param name="start" style="query" type="xs:integer" default="0" required="false" />
+                    <param name="page-size" style="query" type="xs:integer" default="20" required="false" />
+                    <param name="order-by" style="query" type="xs:string" default="displayName" required="false" />
+                    <param name="sort" style="query" type="xs:string" default="ascending" required="false" />
+                    <param name="searchText" style="query" type="xs:string" default="" required="false" />
+                </request>
+                <response status="200">
+                    <representation xmlns:pgd="http://www.hp.com/schema/pagedResponse" element="pgd:pagedResponse" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/groups/{GROUP_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="GROUP_PARAM" style="template" type="xs:string" required="true" />
+            <method id="deleteAbstractGroup" name="DELETE">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/groups/{GROUP_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="GROUP_PARAM" style="template" type="xs:string" required="true" />
+            <method id="patchAbstractGroup" name="PATCH">
+                <response status="200">
+                    <representation xmlns:bstrc="http://www.hp.com/schema/abstractGroup" element="bstrc:abstractGroup"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/groups/{GROUP_ID}/members/{USER_ID}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="GROUP_ID" style="template" type="xs:string" required="true" />
+            <param name="USER_ID" style="template" type="xs:string" required="true" />
+            <method id="deleteMemberFromGroup" name="DELETE">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/groups/{GROUP_ID}/members/{USER_ID}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="GROUP_ID" style="template" type="xs:string" required="true" />
+            <param name="USER_ID" style="template" type="xs:string" required="true" />
+            <method id="isMember" name="GET">
+                <response status="200">
+                    <representation xmlns:bstr="http://www.hp.com/schema/abstractUser" element="bstr:abstractUser" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/groups/{GROUP_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="GROUP_PARAM" style="template" type="xs:string" required="true" />
+            <method id="putAbstractGroup" name="PUT">
+                <response status="200">
+                    <representation xmlns:bstrc="http://www.hp.com/schema/abstractGroup" element="bstrc:abstractGroup"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/groups/{GROUP_ID}/members">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="GROUP_ID" style="template" type="xs:string" required="true" />
+            <method id="addMemberToGroup" name="POST">
+                <response status="200">
+                    <representation xmlns:bstrc="http://www.hp.com/schema/abstractGroup" element="bstrc:abstractGroup"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/groups/{GROUP_ID}/members">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="GROUP_ID" style="template" type="xs:string" required="true" />
+            <method id="getRoster" name="GET">
+                <response status="200">
+                    <representation xmlns:bsgcll="http://www.hp.com/schema/baseGroupRepresentationCollection" element="bsgcll:baseGroupRepresentationCollection"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/groups/{GROUP_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="GROUP_PARAM" style="template" type="xs:string" required="true" />
+            <method id="getAbstractGroup" name="GET">
+                <response status="200">
+                    <representation xmlns:bstrc="http://www.hp.com/schema/abstractGroup" element="bstrc:abstractGroup"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/samlconfig/{SAML_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="SAML_PARAM" style="template" type="xs:string" required="true" />
+            <method id="updateSamlConfig" name="PUT">
+                <response status="200">
+                    <representation xmlns:sml="http://www.hp.com/schema/samlConfig" element="sml:samlConfig" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/samlconfig/{SAML_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="SAML_PARAM" style="template" type="xs:string" required="true" />
+            <method id="deleteSamlConfig" name="DELETE">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/samlconfig/{SAML_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="SAML_PARAM" style="template" type="xs:string" required="true" />
+            <method id="patchSamlConfig" name="PATCH">
+                <response status="200">
+                    <representation xmlns:sml="http://www.hp.com/schema/samlConfig" element="sml:samlConfig" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/samlconfig/">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <method id="createNewSamlConfig" name="POST">
+                <response status="200">
+                    <representation xmlns:sml="http://www.hp.com/schema/samlConfig" element="sml:samlConfig" mediaType="application/xml" />
+                    <representation xmlns:sml="http://www.hp.com/schema/samlConfig" element="sml:samlConfig" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/samlconfig/">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <method id="getAllSamlConfigs" name="GET">
+                <request>
+                    <param name="start" style="query" type="xs:integer" default="0" required="false" />
+                    <param name="page-size" style="query" type="xs:integer" default="20" required="false" />
+                    <param name="order-by" style="query" type="xs:string" default="displayName" required="false" />
+                    <param name="sort" style="query" type="xs:string" default="ascending" required="false" />
+                </request>
+                <response status="200">
+                    <representation xmlns:pgd="http://www.hp.com/schema/pagedResponse" element="pgd:pagedResponse" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{ORG_PARAM}/samlconfig/{SAML_PARAM}">
+            <param name="ORG_PARAM" style="template" type="xs:string" required="true" />
+            <param name="SAML_PARAM" style="template" type="xs:string" required="true" />
+            <method id="getSamlConfigById" name="GET">
+                <response status="200">
+                    <representation xmlns:sml="http://www.hp.com/schema/samlConfig" element="sml:samlConfig" mediaType="application/json" />
+                    <representation xmlns:sml="http://www.hp.com/schema/samlConfig" element="sml:samlConfig" mediaType="application/xml" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/org-info/organizations/{orgName}">
+            <param name="orgName" style="template" type="xs:string" required="true" />
+            <method id="getOrganizationByName" name="GET">
+                <response status="200">
+                    <representation xmlns:rgn="http://www.hp.com/schema/organizationInfoView" element="rgn:organizationInfoView"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations">
+            <method id="getAllOrganizations" name="GET">
+                <response status="200">
+                    <representation xmlns:rgnz="http://www.hp.com/schema/organizationList" element="rgnz:organizationList"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations">
+            <method id="headAllOrganizations" name="HEAD">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{id}">
+            <param name="id" style="template" type="xs:string" required="true" />
+            <method id="getOrganizationById" name="GET">
+                <response status="200">
+                    <representation xmlns:rgnzt="http://www.hp.com/schema/organization" element="rgnzt:organization"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{id}">
+            <param name="id" style="template" type="xs:string" required="true" />
+            <method id="headOrganizationById" name="HEAD">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations">
+            <method id="createNewOrganization" name="POST">
+                <response status="200">
+                    <representation xmlns:rgnzt="http://www.hp.com/schema/organization" element="rgnzt:organization"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{id}">
+            <param name="id" style="template" type="xs:string" required="true" />
+            <method id="updateOrganization" name="PUT">
+                <response status="200">
+                    <representation xmlns:rgnzt="http://www.hp.com/schema/organization" element="rgnzt:organization"
+                        mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{id}">
+            <param name="id" style="template" type="xs:string" required="true" />
+            <method id="deleteOrganization" name="DELETE">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{orgId}/roles">
+            <param name="orgId" style="template" type="xs:string" required="true" />
+            <method id="getRolesForOrganization" name="GET">
+                <response status="200">
+                    <representation xmlns:rll="http://www.hp.com/schema/roleList" element="rll:roleList" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{id}/metadata">
+            <param name="id" style="template" type="xs:string" required="true" />
+            <method id="getOrganizationMetadataSetByOrgId" name="GET">
+                <response status="200">
+                    <representation xmlns:mtd="http://www.hp.com/schema/metadataList" element="mtd:metadataList" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{id}/metadata/{key}">
+            <param name="id" style="template" type="xs:string" required="true" />
+            <param name="key" style="template" type="xs:string" required="true" />
+            <method id="getMetadataByKeyFromOrganizationById" name="GET">
+                <response status="200">
+                    <representation xmlns:mtd2="http://www.hp.com/schema/metadata" element="mtd2:metadata" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{id}/metadata/{key}">
+            <param name="id" style="template" type="xs:string" required="true" />
+            <param name="key" style="template" type="xs:string" required="true" />
+            <method id="addOrUpdateMetadataFromOrganizationById" name="PUT">
+                <response status="200">
+                    <representation xmlns:mtd2="http://www.hp.com/schema/metadata" element="mtd2:metadata" mediaType="application/json" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/api/scim/organizations/{id}/metadata/{key}">
+            <param name="id" style="template" type="xs:string" required="true" />
+            <param name="key" style="template" type="xs:string" required="true" />
+            <method id="deleteMetadataFromOrganizationById" name="DELETE">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/v2.0/">
+            <method id="getVersion" name="GET">
+                <response status="200">
+                    <representation xmlns:vrs2="http://www.hp.com/schema/version" element="vrs2:version" mediaType="application/json" />
+                    <representation xmlns:vrs2="http://www.hp.com/schema/version" element="vrs2:version" mediaType="application/xml" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/v2.0/tokens">
+            <method id="authenticate" name="POST">
+                <response status="200">
+                    <representation xmlns:thn="http://www.hp.com/schema/authenticationSuccessResponse" element="thn:authenticationSuccessResponse"
+                        mediaType="application/json" />
+                    <representation xmlns:thn="http://www.hp.com/schema/authenticationSuccessResponse" element="thn:authenticationSuccessResponse"
+                        mediaType="application/xml" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/v2.0/trusts/{trustId}">
+            <param name="trustId" style="template" type="xs:string" required="true" />
+            <method id="getValidTrust" name="GET">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/v2.0/trusts">
+            <method id="createTrust" name="POST">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/v2.0/tokens/{tokenId}">
+            <param name="tokenId" style="template" type="xs:string" required="true" />
+            <method id="validateToken" name="GET">
+                <response status="200" />
+            </method>
+            <method id="validateToken" name="HEAD">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/v2.0/secondary/impersonate">
+            <method id="consumeTrust" name="POST">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/v2.0/trusts/{trustId}">
+            <param name="trustId" style="template" type="xs:string" required="true" />
+            <method id="revokeTrust" name="DELETE">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/v2.0/secondary/{tokenId}">
+            <param name="tokenId" style="template" type="xs:string" required="true" />
+            <method id="secondaryAuthentication" name="POST">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/v2.0/trusts">
+            <method id="getAllValidTrusts" name="GET">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/idm/v0/logout/**">
+            <method id="index" name="GET">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/idm/v0/public/checkSession">
+            <method id="checkSession" name="GET">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/idm/v0/api/public/image/{imageName:.+}">
+            <param name="imageName" style="template" type="xs:string" required="true" />
+            <method id="getImage" name="GET">
+                <response status="200" />
+            </method>
+        </resource>
+        <resource path="/idm/v0/api/token/request_token">
+            <method id="createRequestToken" name="POST">
+                <response status="200">
+                    <representation xmlns:rqs="http://www.hp.com/schema/request_token" element="rqs:request_token" mediaType="application/json" />
+                    <representation xmlns:rqs="http://www.hp.com/schema/request_token" element="rqs:request_token" mediaType="application/xml" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/idm/v0/api/token/request_token/validate">
+            <method id="validateRequestToken" name="POST">
+                <response status="200">
+                    <representation xmlns:tkn="http://www.hp.com/schema/token" element="tkn:token" mediaType="application/json" />
+                    <representation xmlns:tkn="http://www.hp.com/schema/token" element="tkn:token" mediaType="application/xml" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/idm/v0/api/public/token">
+            <method id="getTokenData" name="GET">
+                <response status="200">
+                    <representation xmlns:rqst="http://www.hp.com/schema/requestTokenDetails" element="rqst:requestTokenDetails"
+                        mediaType="application/json" />
+                    <representation xmlns:rqst="http://www.hp.com/schema/requestTokenDetails" element="rqst:requestTokenDetails"
+                        mediaType="application/xml" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/idm/v0/api/token/access_token">
+            <method id="getAccessToken" name="POST">
+                <response status="200">
+                    <representation xmlns:thnt="http://www.hp.com/schema/authenticationResponse" element="thnt:authenticationResponse"
+                        mediaType="application/json" />
+                    <representation xmlns:thnt="http://www.hp.com/schema/authenticationResponse" element="thnt:authenticationResponse"
+                        mediaType="application/xml" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/idm/v0/api/public/authenticate">
+            <method id="authenticate" name="POST">
+                <response status="200">
+                    <representation xmlns:lgn="http://www.hp.com/schema/loginResponse" element="lgn:loginResponse" mediaType="application/json" />
+                    <representation xmlns:lgn="http://www.hp.com/schema/loginResponse" element="lgn:loginResponse" mediaType="application/xml" />
+                </response>
+            </method>
+        </resource>
+        <resource path="/idm/v0/api/public/tenant/{orgName}">
+            <param name="orgName" style="template" type="xs:string" required="true" />
+            <method id="getOrganization" name="GET">
+                <response status="200">
+                    <representation xmlns:rgn2="http://www.hp.com/schema/org" element="rgn2:org" mediaType="application/json" />
+                    <representation xmlns:rgn2="http://www.hp.com/schema/org" element="rgn2:org" mediaType="application/xml" />
+                </response>
+            </method>
+        </resource>
+    </resources>
+</application>

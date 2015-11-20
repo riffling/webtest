@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project default="package">
+	<!-- - - - - - - - - - - - - - - - - - 
+          target: init                      
+         - - - - - - - - - - - - - - - - - -->
+	<target name="init">
+
+	</target>
+
+	<!-- ================================= 
+          target: package              
+         ================================= -->
+	<target name="package" depends="init" description="description">
+		<zip destfile="idm_saml2_V002.zip">
+			<fileset dir="." includes="**/*" excludes="**/src/test/** **/target/*">
+			</fileset>
+		</zip>
+	</target>
+	<target name="package_test" depends="init" description="description">
+		<zip destfile="idm_saml2_V003.zip" basedir="." excludes="**/src/main/** */*.java *.zip" >
+		</zip>
+ 	</target>
+
+</project>

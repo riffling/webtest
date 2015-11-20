@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:include schemaLocation="baseGroupRepresentation.xsd"></xs:include>
+    <xs:element name="baseGroupRepresentationCollection" type="baseGroupRepresentationCollection" />
+
+    <xs:complexType name="baseGroupRepresentationCollection">
+        <xs:sequence>
+            <xs:element name="baseGroupRepresentation" type="baseGroupRepresentation" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+

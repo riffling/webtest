@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+        <property name="useSuffixPatternMatch" value="false" />
+    </bean>
+
+    <bean class="com.hp.ccue.identity.web.api.ValidationErrorHandling"/>
+
+    <!-- START Domain Controller classes -->
+    <bean id="organizationController" class="com.hp.ccue.identity.web.api.OrganizationController">
+    </bean>
+    <bean id="samlConfigController" class="com.hp.ccue.identity.web.api.SamlConfigController">
+    </bean>
+    <bean id="roleAndGroupController" class="com.hp.ccue.identity.web.api.RoleAndGroupController">
+    </bean>
+    <bean id="keystoneController" class="com.hp.ccue.identity.web.api.KeystoneController">
+    </bean>
+    <bean id="userController" class="com.hp.ccue.identity.web.api.AbstractUserController">
+    </bean>
+    <bean id="userRepresentationController" class="com.hp.ccue.identity.web.api.AbstractUserRepresentationController">
+    </bean>
+    <bean id="groupRepresentationController" class="com.hp.ccue.identity.web.api.AbstractGroupRepresentationController">
+    </bean>
+    <bean id="abstractGroupController" class="com.hp.ccue.identity.web.api.AbstractGroupController">
+    </bean>
+     <!--END Domain Controller classes -->
+
+    <!-- 
+        Turn global-method-security on so we can use the @Security annotation on the OrganizationController.
+        One thing about this configuration that I dont like is that the accessDecisionManager is created in
+        applicationContext-security.xml and needs to be set both on the global-method-security for the scim
+        components, as well as the 'access-decision-manager-ref' on the http element in applicationContext-security.xml
+    -->
+
+</beans>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:security="http://www.springframework.org/schema/security"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+  <security:debug />
+  <!-- <security:http pattern="index.jsp" security="none" /> -->
+  <!-- <security:http auto-config="true"> if entry-point-ref not specified. it will use the -->
+  <security:http auto-config="true" use-expressions="true" create-session="always" entry-point-ref="casEntryPoint" pattern="/security/**">
+    <security:intercept-url pattern="/security/admin" access="hasRole('ROLE_ADMIN')" />
+    <security:intercept-url pattern="/security/confidential" access="hasRole('ROLE_SUPERADMIN')" />
+      <security:intercept-url pattern="/security/**" access="isAuthenticated()" />
+    <security:intercept-url pattern="/security/test**" access="isAnonymous()" />
+    <!-- permitAll, isAnonymous(), IS_AUTHENTICATED_ANONYMOUSLY 表示匿名用户可以访问,与ROLE_ANONYMOUS效果相同 -->
+    <!--<security:intercept-url pattern="/login.jsp" access="IS_AUTHENTICATED_ANONYMOUSLY"/> -->
+    <!-- login-page: Geneated by DefaultLoginPageGeneratingFilter, username-parameter: default, j_username, password-parameter: default, j_password, 
+      login-processing-url: default, /j-spring-security-check if authentication-success-handler-ref can be replaced by default-target-url="/index.jsp" 
+      if authentication-failuer-handler-ref can be replaced by authentication-failure-url="/loginFailure.jsp" -->
+    <security:form-login  login-page="/login.jsp" login-processing-url="/login.do" username-parameter="username"
+      password-parameter="password" authentication-success-handler-ref="handlerAfterLoginSuccess" authentication-failure-handler-ref="handlerAfterLoginFailure" />
+    <security:x509 />
+    <security:anonymous enabled="true" granted-authority="ROLE_ANONYMOUS" username="anonymousUserTest"/>
+
+    <!-- <security:form-login /> <security:logout logout-success-url="/loggedout.jsp" delete-cookies="JSESSIONID" invalidate-session="true" /> 
+      <security:remember-me /> <security:x509 /> <security:session-management invalid-session-url="/timeout.jsp"> <security:concurrency-control max-sessions="1" 
+      error-if-maximum-exceeded="true" /> </security:session-management> -->
+
+    <!-- if customer-filter not specified, ... -->
+    <security:custom-filter position="CAS_FILTER" ref="casFilter" />
+    <security:custom-filter position="FILTER_SECURITY_INTERCEPTOR" ref=""/>
+  </security:http>
+  <bean id="handlerAfterLoginSuccess" class="org.third.spring.security.login.AuthenticationSuccessHandlerImpl"  />
+  <bean id="handlerAfterLoginFailure" class="org.third.spring.security.login.AuthenticationFailureHandlerImpl" />
+
+  <bean id="spring_memory_userDetailService" class="org.third.spring.security.provider.SpringInMemoryUserDetailsManager">
+    <constructor-arg index="0">
+      <props>
+        <prop key="rod">koala,enabled,ROLE_USER,ROLE_ADMIN</prop>
+        <prop key="scott">wombat,enabled,ROLE_USER,ROLE_ADMIN</prop>
+        <prop key="super">super,enabled,ROLE_SUPERADMIN</prop>
+      </props>
+    </constructor-arg>
+  </bean>
+  <bean id="encoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
+  <bean id="messageSourceRef"   class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+          <property name="basename"  value="classpath:org/springframework/security/messages_zh_CN" />
+  </bean>  
+  <bean id="springAuthenticationProvider" class="org.third.spring.security.provider.SpringDaoAuthenticationProvider" >
+    <!-- <property name="tokenFactory" ref="tokenFactory" /> <property name="tokenValidator" ref="validator" /> <property name="configuration" 
+      ref="idmConfig" /> <property name="connectionService" ref="connectionService" /> <property name="idMAccessTokenRestApi" value="idm/v0/api/token/access_token" 
+      />
+      <property name="passwordEncoder" class="org.springframework.security.authentication.encoding.PlaintextPasswordEncoder"/>
+      <property name="userNotFoundEncodedPassword">passwordEncoder.encodePassword(USER_NOT_FOUND_PASSWORD, null)</property>
+      <property name="messages" ref="messageSourceRef"/>
+       -->
+    <property name="userDetailsService" ref="spring_memory_userDetailService"  />
+  </bean>
+
+  <security:authentication-manager alias="webtest_authenticationManager" >
+    <security:authentication-provider ref="springAuthenticationProvider" >
+      <!-- 
+        <security:password-encoder ref="encoder"/> 
+        <security:user-service> <security:user name="rod" password="$2a$10$75pBjapg4Nl8Pzd.3JRnUe7PDJmk9qBGwNEJDAlA3V.dEJxcDKn5O" 
+        authorities="supervisor, user, teller" /> <security:user name="scott" password="$2a$06$eChwvzAu3TSexnC3ynw4LOSw1qiEbtNItNeYv5uI40w1i3paoSfLu" 
+        authorities="user" /> <security:user name="peter" password="$2a$04$8.H8bCMROLF4CIgd7IpeQ.tcBXLP5w8iplO0n.kCIkISwrIgX28Ii" authorities="user" 
+        /> </security:user-service> -->
+      <!-- <security:user-service> <security:user name="rod" password="koala" authorities="ROLE_USER,ROLE_ADMIN" /> <security:user name="scott" 
+        password="wombat" authorities="ROLE_USER,ROLE_ADMIN" /> <security:user name="super" password="super" authorities="ROLE_SUPERADMIN" /> </security:user-service> -->
+    </security:authentication-provider>
+<!-- 	<security:ldap-authentication-provider>
+		<security:password-compare></security:password-compare>
+	</security:ldap-authentication-provider> -->
+  </security:authentication-manager>
+
+  <bean id="casEntryPoint" class="org.third.spring.security.auth.CasEntryPoint" />
+  <bean id="casFilter" class="org.third.spring.security.auth.CasAuthenticationFilter">
+    <property name="authenticationManager" ref="webtest_authenticationManager" />
+  </bean>
+</beans>

@@ -1,0 +1,1599 @@
+<?xml version="1.0"?>
+
+<EntityDescriptor xmlns="urn:oasis:names:tc:SAML:2.0:metadata" entityID="http://SGDLITVM0507.adfs.com/adfs/services/trust" ID="_1daa2d79-6c76-4fdd-9a86-f83ce961b1a9">
+
+
+<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+
+
+<ds:SignedInfo>
+
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+
+<ds:SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"/>
+
+
+<ds:Reference URI="#_1daa2d79-6c76-4fdd-9a86-f83ce961b1a9">
+
+
+<ds:Transforms>
+
+<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+
+<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+
+</ds:Transforms>
+
+<ds:DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"/>
+
+<ds:DigestValue>GuiO7h59EAPveX04BBi9Hggbdhu/E/Bz3Q3UsagFsJE=</ds:DigestValue>
+
+</ds:Reference>
+
+</ds:SignedInfo>
+
+<ds:SignatureValue>PQyzpPVGkTSF+rxgp5xKpBp9en5nSlwG0Qb3yfcMX33omWv1PO6LVFhb5/jNgGb+Kd27gZIOQgT0IJqwlA081qCoOGtTE/GPYP13C+myjcSovAKERHxsfg1V4JDGXdzp87g+RY8m1SeTRfuxkoTgPtEbxuJhgBdB6J/8VS9BkSnX7W6y/GlyWQXMSpiPGZM+5KJZif09gciTLqbE3PJiaWNqd3pf98IgR/AN6iN0Lf5bwm8+bU54uXAAVD5NLGya60rUKf3+n01VbHioN6dShrdCvgBosxzqdVzorxrzUsp5v2JRjSupesBNCZwaawP9vZlwrAbb9rG2Fu5wMj5uyw==</ds:SignatureValue>
+
+
+<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+
+
+<X509Data>
+
+<X509Certificate>MIIC5jCCAc6gAwIBAgIQGqwRJvZiDaJLw5vNg2oiDjANBgkqhkiG9w0BAQsFADAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBTR0RMSVRWTTA1MDcuYWRmcy5jb20wHhcNMTUwNzA4MDMzMzA1WhcNMTYwNzA3MDMzMzA1WjAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBTR0RMSVRWTTA1MDcuYWRmcy5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDHLj6z79tUanT174UE6/5wepJsHcXA1zTPvlUQudKOlVhJvbu/bLMpFRoW/IsOO5hyhkbpX7gQEXcj4a4Hgk0if0qb8ozrQzSzGXjUaBWBLGJ4dF9xIiQq+G9KV0S9dUC+Y6Hb+t9y4+oJPAhlre1QO8scxMalAbH4Vp6c4V7XvlCFavT+dvYvrdtaFel/7vtKgnpt/+3M2KM3cnU56yppRMemI/qjpXmoSf9ZzgAC/jRIqH26bWSwgTf/zRuZ8ztPtuE0Qmc8JZJj3vT8OSVEthPlBJi6TLybaKHoRU1BcM4ZFQKviJEsiJ1Li1wOx5pkT2KYXAkQMN+jeMDyif8jAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAC7en6oMdrKmvoevtSTVW3vIRKgTrT+lCKTmv74gsQI81w2ZPE2RG8Vg9XZHlSCPfqwj4fSuCxsLCD3WbcUOyzm1wMxS6bjFvG4xukYKg8PHcy0C7DAo7X8M86L8/xEQP8pwbpz91hFGn+JSSjmwIy8O7AgcY9tLnNPKooePzygRw0JmooZrUUyGash8YhmaWO17JlyZNgl0iJJBoiKQtSLbHgyTneJ1BxxHSjpRpRpXV5PJubkLbfTb2qEvxS1rjtXJbWrxxtkqcmg4WAiyWOMxEX+sZ8pU+aCuBK6baI5QEDAJG3OF8gF8oDEaADBMIxHW65/2b9Qwptf0QYUD1DE=</X509Certificate>
+
+</X509Data>
+
+</KeyInfo>
+
+</ds:Signature>
+
+
+<RoleDescriptor xmlns:fed="http://docs.oasis-open.org/wsfed/federation/200706" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ServiceDisplayName="HP ADFS" protocolSupportEnumeration="http://docs.oasis-open.org/ws-sx/ws-trust/200512 http://schemas.xmlsoap.org/ws/2005/02/trust http://docs.oasis-open.org/wsfed/federation/200706" xsi:type="fed:ApplicationServiceType">
+
+
+<KeyDescriptor use="encryption">
+
+
+<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+
+
+<X509Data>
+
+<X509Certificate>MIIC7DCCAdSgAwIBAgIQHrYCCfLrWKxMCxWrHTGhSzANBgkqhkiG9w0BAQsFADAyMTAwLgYDVQQDEydBREZTIEVuY3J5cHRpb24gLSBTR0RMSVRWTTA1MDcuYWRmcy5jb20wHhcNMTUwNzA4MDMzMzA1WhcNMTYwNzA3MDMzMzA1WjAyMTAwLgYDVQQDEydBREZTIEVuY3J5cHRpb24gLSBTR0RMSVRWTTA1MDcuYWRmcy5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDBYtEYWxqzzCbHlkCSMpeMpRNGw7eaf/OrzhJtpO3jx1b5zjfy9JC1RVxODeqqzF5TWXlrF40NqO8g8skG/2Aup4y9R+aISd0zXGXvQmv0W9TleP3yOoyedqbyVoFa8gNO6a2hbZSI8AWn5RrD7twCvfjCqpZsHpglFCSkWZuq96YfdVSLQ5amsF3YVIyQOz086gxVqkHFLbi+Apfy5VwLQES5RE9tSVrvLxigtSxGtrODdjYKcLu9hUxxjUtp0YHstqaMut+2WxdzT3wYgo79Naq31KYA8EIchaVU4vUtEHCn2yhGKYcz8OeKwUJE0zS6cjGjpvLnsVFf0b+1bac/AgMBAAEwDQYJKoZIhvcNAQELBQADggEBAD83yhtMNVAqgBx9QzbsfHH4WOMYowI/jGukoB+tUeBGEQsqxngNGjXGD0VmYWrvmr+1SxiuRScf7lQsj0m2Q+/upbqr0aFkZ7G9x04raeR84pXK0+iUqmvfN0EBzt0G9fIkt3gAi93Fg/pwHMWXcBcuJuVNnegnnK2t7Um5hbDlqkZRNpRWz48uSIzIsgodLYlW3D9L5hcKjNb3ZDSQYxFu7/giiRpu12a7jypbJpfE/FmdtwCeVFdKz54cPjmxlj5pY4tZMap/327DmAcfUP3DzzcMi0JGy06zXVLV6sx5sTP0LoHjTnimwf5rC6awtUfF03KMI6IYpdG10r3H3gA=</X509Certificate>
+
+</X509Data>
+
+</KeyInfo>
+
+</KeyDescriptor>
+
+
+<fed:ClaimTypesRequested>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress">
+
+<auth:DisplayName>E-Mail Address</auth:DisplayName>
+
+<auth:Description>The e-mail address of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname">
+
+<auth:DisplayName>Given Name</auth:DisplayName>
+
+<auth:Description>The given name of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name">
+
+<auth:DisplayName>Name</auth:DisplayName>
+
+<auth:Description>The unique name of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn">
+
+<auth:DisplayName>UPN</auth:DisplayName>
+
+<auth:Description>The user principal name (UPN) of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/claims/CommonName">
+
+<auth:DisplayName>Common Name</auth:DisplayName>
+
+<auth:Description>The common name of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/claims/EmailAddress">
+
+<auth:DisplayName>AD FS 1.x E-Mail Address</auth:DisplayName>
+
+<auth:Description>The e-mail address of the user when interoperating with AD FS 1.1 or AD FS 1.0</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/claims/Group">
+
+<auth:DisplayName>Group</auth:DisplayName>
+
+<auth:Description>A group that the user is a member of</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/claims/UPN">
+
+<auth:DisplayName>AD FS 1.x UPN</auth:DisplayName>
+
+<auth:Description>The UPN of the user when interoperating with AD FS 1.1 or AD FS 1.0</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/role">
+
+<auth:DisplayName>Role</auth:DisplayName>
+
+<auth:Description>A role that the user has</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname">
+
+<auth:DisplayName>Surname</auth:DisplayName>
+
+<auth:Description>The surname of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/privatepersonalidentifier">
+
+<auth:DisplayName>PPID</auth:DisplayName>
+
+<auth:Description>The private identifier of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier">
+
+<auth:DisplayName>Name ID</auth:DisplayName>
+
+<auth:Description>The SAML name identifier of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant">
+
+<auth:DisplayName>Authentication time stamp</auth:DisplayName>
+
+<auth:Description>Used to display the time and date that the user was authenticated</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod">
+
+<auth:DisplayName>Authentication method</auth:DisplayName>
+
+<auth:Description>The method used to authenticate the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/denyonlysid">
+
+<auth:DisplayName>Deny only group SID</auth:DisplayName>
+
+<auth:Description>The deny-only group SID of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/denyonlyprimarysid">
+
+<auth:DisplayName>Deny only primary SID</auth:DisplayName>
+
+<auth:Description>The deny-only primary SID of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/denyonlyprimarygroupsid">
+
+<auth:DisplayName>Deny only primary group SID</auth:DisplayName>
+
+<auth:Description>The deny-only primary group SID of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid">
+
+<auth:DisplayName>Group SID</auth:DisplayName>
+
+<auth:Description>The group SID of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/primarygroupsid">
+
+<auth:DisplayName>Primary group SID</auth:DisplayName>
+
+<auth:Description>The primary group SID of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/primarysid">
+
+<auth:DisplayName>Primary SID</auth:DisplayName>
+
+<auth:Description>The primary SID of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname">
+
+<auth:DisplayName>Windows account name</auth:DisplayName>
+
+<auth:Description>The domain account name of the user in the form of domain\user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/isregistereduser">
+
+<auth:DisplayName>Is Registered User</auth:DisplayName>
+
+<auth:Description>User is registered to use this device</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/identifier">
+
+<auth:DisplayName>Device Identifier</auth:DisplayName>
+
+<auth:Description>Identifier of the device</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/registrationid">
+
+<auth:DisplayName>Device Registration Identifier</auth:DisplayName>
+
+<auth:Description>Identifier for Device Registration</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/displayname">
+
+<auth:DisplayName>Device Registration DisplayName</auth:DisplayName>
+
+<auth:Description>Display name of Device Registration</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/ostype">
+
+<auth:DisplayName>Device OS type</auth:DisplayName>
+
+<auth:Description>OS type of the device</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/osversion">
+
+<auth:DisplayName>Device OS Version</auth:DisplayName>
+
+<auth:Description>OS version of the device</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/ismanaged">
+
+<auth:DisplayName>Is Managed Device</auth:DisplayName>
+
+<auth:Description>Device is managed by a management service</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip">
+
+<auth:DisplayName>Forwarded Client IP</auth:DisplayName>
+
+<auth:Description>IP address of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application">
+
+<auth:DisplayName>Client Application</auth:DisplayName>
+
+<auth:Description>Type of the Client Application</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent">
+
+<auth:DisplayName>Client User Agent</auth:DisplayName>
+
+<auth:Description>Device type the client is using to access the application</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-ip">
+
+<auth:DisplayName>Client IP</auth:DisplayName>
+
+<auth:Description>IP address of the client</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path">
+
+<auth:DisplayName>Endpoint Path</auth:DisplayName>
+
+<auth:Description>Absolute Endpoint path which can be used to determine active versus passive clients</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy">
+
+<auth:DisplayName>Proxy</auth:DisplayName>
+
+<auth:Description>DNS name of the federation server proxy that passed the request</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/relyingpartytrustid">
+
+<auth:DisplayName>Application Identifier</auth:DisplayName>
+
+<auth:Description>Identifier for the Relying Party</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/applicationpolicy">
+
+<auth:DisplayName>Application policies</auth:DisplayName>
+
+<auth:Description>Application policies of the certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/authoritykeyidentifier">
+
+<auth:DisplayName>Authority Key Identifier</auth:DisplayName>
+
+<auth:Description>The Authority Key Identifier extension of the certificate that signed an issued certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/basicconstraints">
+
+<auth:DisplayName>Basic Constraint</auth:DisplayName>
+
+<auth:Description>One of the basic constraints of the certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/eku">
+
+<auth:DisplayName>Enhanced Key Usage</auth:DisplayName>
+
+<auth:Description>Describes one of the enhanced key usages of the certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/issuer">
+
+<auth:DisplayName>Issuer</auth:DisplayName>
+
+<auth:Description>The name of the certificate authority that issued the X.509 certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/issuername">
+
+<auth:DisplayName>Issuer Name</auth:DisplayName>
+
+<auth:Description>The distinguished name of the certificate issuer</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/keyusage">
+
+<auth:DisplayName>Key Usage</auth:DisplayName>
+
+<auth:Description>One of the key usages of the certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/notafter">
+
+<auth:DisplayName>Not After</auth:DisplayName>
+
+<auth:Description>Date in local time after which a certificate is no longer valid</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/notbefore">
+
+<auth:DisplayName>Not Before</auth:DisplayName>
+
+<auth:Description>The date in local time on which a certificate becomes valid</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatepolicy">
+
+<auth:DisplayName>Certificate Policies</auth:DisplayName>
+
+<auth:Description>The policies under which the certificate has been issued</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/rsa">
+
+<auth:DisplayName>Public Key</auth:DisplayName>
+
+<auth:Description>Public Key of the certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/rawdata">
+
+<auth:DisplayName>Certificate Raw Data</auth:DisplayName>
+
+<auth:Description>The raw data of the certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/san">
+
+<auth:DisplayName>Subject Alternative Name</auth:DisplayName>
+
+<auth:Description>One of the alternative names of the certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/serialnumber">
+
+<auth:DisplayName>Serial Number</auth:DisplayName>
+
+<auth:Description>The serial number of a certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/signaturealgorithm">
+
+<auth:DisplayName>Signature Algorithm</auth:DisplayName>
+
+<auth:Description>The algorithm used to create the signature of a certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/subject">
+
+<auth:DisplayName>Subject</auth:DisplayName>
+
+<auth:Description>The subject from the certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/subjectkeyidentifier">
+
+<auth:DisplayName>Subject Key Identifier</auth:DisplayName>
+
+<auth:Description>Describes the subject key identifier of the certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/subjectname">
+
+<auth:DisplayName>Subject Name</auth:DisplayName>
+
+<auth:Description>The subject distinguished name from a certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatetemplateinformation">
+
+<auth:DisplayName>V2 Template Name</auth:DisplayName>
+
+<auth:Description>The name of the version 2 certificate template used when issuing or renewing a certificate. The extension is Microsoft specific.</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatetemplatename">
+
+<auth:DisplayName>V1 Template Name</auth:DisplayName>
+
+<auth:Description>The name of the version 1 certificate template used when issuing or renewing a certificate. The extension is Microsoft specific.</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/thumbprint">
+
+<auth:DisplayName>Thumbprint</auth:DisplayName>
+
+<auth:Description>Thumbprint of the certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/x509version">
+
+<auth:DisplayName>X.509 Version</auth:DisplayName>
+
+<auth:Description>The X.509 format version of a certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork">
+
+<auth:DisplayName>Inside Corporate Network</auth:DisplayName>
+
+<auth:Description>Used to indicate if a request originated inside corporate network</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2012/01/passwordexpirationtime">
+
+<auth:DisplayName>Password Expiration Time</auth:DisplayName>
+
+<auth:Description>Used to display the time when the password expires</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2012/01/passwordexpirationdays">
+
+<auth:DisplayName>Password Expiration Days</auth:DisplayName>
+
+<auth:Description>Used to display the number of days to password expiry</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2012/01/passwordchangeurl">
+
+<auth:DisplayName>Update Password URL</auth:DisplayName>
+
+<auth:Description>Used to display the web address of update password service</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/claims/authnmethodsreferences">
+
+<auth:DisplayName>Authentication Methods References</auth:DisplayName>
+
+<auth:Description>Used to indicate all authentication methods used to authenticate the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/client-request-id">
+
+<auth:DisplayName>Client Request ID</auth:DisplayName>
+
+<auth:Description>Identifier for a user session</auth:Description>
+
+</auth:ClaimType>
+
+</fed:ClaimTypesRequested>
+
+
+<fed:TargetScopes>
+
+
+<EndpointReference xmlns="http://www.w3.org/2005/08/addressing">
+
+<Address>https://sgdlitvm0507.adfs.com/adfs/services/trust/2005/issuedtokenmixedasymmetricbasic256</Address>
+
+</EndpointReference>
+
+
+<EndpointReference xmlns="http://www.w3.org/2005/08/addressing">
+
+<Address>https://sgdlitvm0507.adfs.com/adfs/services/trust/2005/issuedtokenmixedsymmetricbasic256</Address>
+
+</EndpointReference>
+
+
+<EndpointReference xmlns="http://www.w3.org/2005/08/addressing">
+
+<Address>https://sgdlitvm0507.adfs.com/adfs/services/trust/13/issuedtokenmixedasymmetricbasic256</Address>
+
+</EndpointReference>
+
+
+<EndpointReference xmlns="http://www.w3.org/2005/08/addressing">
+
+<Address>https://sgdlitvm0507.adfs.com/adfs/services/trust/13/issuedtokenmixedsymmetricbasic256</Address>
+
+</EndpointReference>
+
+
+<EndpointReference xmlns="http://www.w3.org/2005/08/addressing">
+
+<Address>https://sgdlitvm0507.adfs.com/adfs/ls/</Address>
+
+</EndpointReference>
+
+
+<EndpointReference xmlns="http://www.w3.org/2005/08/addressing">
+
+<Address>http://sgdlitvm0507.adfs.com/adfs/services/trust</Address>
+
+</EndpointReference>
+
+</fed:TargetScopes>
+
+
+<fed:ApplicationServiceEndpoint>
+
+
+<EndpointReference xmlns="http://www.w3.org/2005/08/addressing">
+
+<Address>https://sgdlitvm0507.adfs.com/adfs/services/trust/2005/issuedtokenmixedasymmetricbasic256</Address>
+
+</EndpointReference>
+
+</fed:ApplicationServiceEndpoint>
+
+
+<fed:PassiveRequestorEndpoint>
+
+
+<EndpointReference xmlns="http://www.w3.org/2005/08/addressing">
+
+<Address>https://sgdlitvm0507.adfs.com/adfs/ls/</Address>
+
+</EndpointReference>
+
+</fed:PassiveRequestorEndpoint>
+
+</RoleDescriptor>
+
+
+<RoleDescriptor xmlns:fed="http://docs.oasis-open.org/wsfed/federation/200706" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ServiceDisplayName="HP ADFS" protocolSupportEnumeration="http://docs.oasis-open.org/ws-sx/ws-trust/200512 http://schemas.xmlsoap.org/ws/2005/02/trust http://docs.oasis-open.org/wsfed/federation/200706" xsi:type="fed:SecurityTokenServiceType">
+
+
+<KeyDescriptor use="signing">
+
+
+<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+
+
+<X509Data>
+
+<X509Certificate>MIIC5jCCAc6gAwIBAgIQGqwRJvZiDaJLw5vNg2oiDjANBgkqhkiG9w0BAQsFADAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBTR0RMSVRWTTA1MDcuYWRmcy5jb20wHhcNMTUwNzA4MDMzMzA1WhcNMTYwNzA3MDMzMzA1WjAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBTR0RMSVRWTTA1MDcuYWRmcy5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDHLj6z79tUanT174UE6/5wepJsHcXA1zTPvlUQudKOlVhJvbu/bLMpFRoW/IsOO5hyhkbpX7gQEXcj4a4Hgk0if0qb8ozrQzSzGXjUaBWBLGJ4dF9xIiQq+G9KV0S9dUC+Y6Hb+t9y4+oJPAhlre1QO8scxMalAbH4Vp6c4V7XvlCFavT+dvYvrdtaFel/7vtKgnpt/+3M2KM3cnU56yppRMemI/qjpXmoSf9ZzgAC/jRIqH26bWSwgTf/zRuZ8ztPtuE0Qmc8JZJj3vT8OSVEthPlBJi6TLybaKHoRU1BcM4ZFQKviJEsiJ1Li1wOx5pkT2KYXAkQMN+jeMDyif8jAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAC7en6oMdrKmvoevtSTVW3vIRKgTrT+lCKTmv74gsQI81w2ZPE2RG8Vg9XZHlSCPfqwj4fSuCxsLCD3WbcUOyzm1wMxS6bjFvG4xukYKg8PHcy0C7DAo7X8M86L8/xEQP8pwbpz91hFGn+JSSjmwIy8O7AgcY9tLnNPKooePzygRw0JmooZrUUyGash8YhmaWO17JlyZNgl0iJJBoiKQtSLbHgyTneJ1BxxHSjpRpRpXV5PJubkLbfTb2qEvxS1rjtXJbWrxxtkqcmg4WAiyWOMxEX+sZ8pU+aCuBK6baI5QEDAJG3OF8gF8oDEaADBMIxHW65/2b9Qwptf0QYUD1DE=</X509Certificate>
+
+</X509Data>
+
+</KeyInfo>
+
+</KeyDescriptor>
+
+
+<fed:TokenTypesOffered>
+
+<fed:TokenType Uri="urn:oasis:names:tc:SAML:2.0:assertion"/>
+
+<fed:TokenType Uri="urn:oasis:names:tc:SAML:1.0:assertion"/>
+
+</fed:TokenTypesOffered>
+
+
+<fed:ClaimTypesOffered>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress">
+
+<auth:DisplayName>E-Mail Address</auth:DisplayName>
+
+<auth:Description>The e-mail address of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname">
+
+<auth:DisplayName>Given Name</auth:DisplayName>
+
+<auth:Description>The given name of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name">
+
+<auth:DisplayName>Name</auth:DisplayName>
+
+<auth:Description>The unique name of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn">
+
+<auth:DisplayName>UPN</auth:DisplayName>
+
+<auth:Description>The user principal name (UPN) of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/claims/CommonName">
+
+<auth:DisplayName>Common Name</auth:DisplayName>
+
+<auth:Description>The common name of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/claims/EmailAddress">
+
+<auth:DisplayName>AD FS 1.x E-Mail Address</auth:DisplayName>
+
+<auth:Description>The e-mail address of the user when interoperating with AD FS 1.1 or AD FS 1.0</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/claims/Group">
+
+<auth:DisplayName>Group</auth:DisplayName>
+
+<auth:Description>A group that the user is a member of</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/claims/UPN">
+
+<auth:DisplayName>AD FS 1.x UPN</auth:DisplayName>
+
+<auth:Description>The UPN of the user when interoperating with AD FS 1.1 or AD FS 1.0</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/role">
+
+<auth:DisplayName>Role</auth:DisplayName>
+
+<auth:Description>A role that the user has</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname">
+
+<auth:DisplayName>Surname</auth:DisplayName>
+
+<auth:Description>The surname of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/privatepersonalidentifier">
+
+<auth:DisplayName>PPID</auth:DisplayName>
+
+<auth:Description>The private identifier of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier">
+
+<auth:DisplayName>Name ID</auth:DisplayName>
+
+<auth:Description>The SAML name identifier of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant">
+
+<auth:DisplayName>Authentication time stamp</auth:DisplayName>
+
+<auth:Description>Used to display the time and date that the user was authenticated</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod">
+
+<auth:DisplayName>Authentication method</auth:DisplayName>
+
+<auth:Description>The method used to authenticate the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/denyonlysid">
+
+<auth:DisplayName>Deny only group SID</auth:DisplayName>
+
+<auth:Description>The deny-only group SID of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/denyonlyprimarysid">
+
+<auth:DisplayName>Deny only primary SID</auth:DisplayName>
+
+<auth:Description>The deny-only primary SID of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/denyonlyprimarygroupsid">
+
+<auth:DisplayName>Deny only primary group SID</auth:DisplayName>
+
+<auth:Description>The deny-only primary group SID of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid">
+
+<auth:DisplayName>Group SID</auth:DisplayName>
+
+<auth:Description>The group SID of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/primarygroupsid">
+
+<auth:DisplayName>Primary group SID</auth:DisplayName>
+
+<auth:Description>The primary group SID of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/primarysid">
+
+<auth:DisplayName>Primary SID</auth:DisplayName>
+
+<auth:Description>The primary SID of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname">
+
+<auth:DisplayName>Windows account name</auth:DisplayName>
+
+<auth:Description>The domain account name of the user in the form of domain\user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/isregistereduser">
+
+<auth:DisplayName>Is Registered User</auth:DisplayName>
+
+<auth:Description>User is registered to use this device</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/identifier">
+
+<auth:DisplayName>Device Identifier</auth:DisplayName>
+
+<auth:Description>Identifier of the device</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/registrationid">
+
+<auth:DisplayName>Device Registration Identifier</auth:DisplayName>
+
+<auth:Description>Identifier for Device Registration</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/displayname">
+
+<auth:DisplayName>Device Registration DisplayName</auth:DisplayName>
+
+<auth:Description>Display name of Device Registration</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/ostype">
+
+<auth:DisplayName>Device OS type</auth:DisplayName>
+
+<auth:Description>OS type of the device</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/osversion">
+
+<auth:DisplayName>Device OS Version</auth:DisplayName>
+
+<auth:Description>OS version of the device</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/devicecontext/claims/ismanaged">
+
+<auth:DisplayName>Is Managed Device</auth:DisplayName>
+
+<auth:Description>Device is managed by a management service</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip">
+
+<auth:DisplayName>Forwarded Client IP</auth:DisplayName>
+
+<auth:Description>IP address of the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application">
+
+<auth:DisplayName>Client Application</auth:DisplayName>
+
+<auth:Description>Type of the Client Application</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent">
+
+<auth:DisplayName>Client User Agent</auth:DisplayName>
+
+<auth:Description>Device type the client is using to access the application</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-ip">
+
+<auth:DisplayName>Client IP</auth:DisplayName>
+
+<auth:Description>IP address of the client</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path">
+
+<auth:DisplayName>Endpoint Path</auth:DisplayName>
+
+<auth:Description>Absolute Endpoint path which can be used to determine active versus passive clients</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy">
+
+<auth:DisplayName>Proxy</auth:DisplayName>
+
+<auth:Description>DNS name of the federation server proxy that passed the request</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/relyingpartytrustid">
+
+<auth:DisplayName>Application Identifier</auth:DisplayName>
+
+<auth:Description>Identifier for the Relying Party</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/applicationpolicy">
+
+<auth:DisplayName>Application policies</auth:DisplayName>
+
+<auth:Description>Application policies of the certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/authoritykeyidentifier">
+
+<auth:DisplayName>Authority Key Identifier</auth:DisplayName>
+
+<auth:Description>The Authority Key Identifier extension of the certificate that signed an issued certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/basicconstraints">
+
+<auth:DisplayName>Basic Constraint</auth:DisplayName>
+
+<auth:Description>One of the basic constraints of the certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/eku">
+
+<auth:DisplayName>Enhanced Key Usage</auth:DisplayName>
+
+<auth:Description>Describes one of the enhanced key usages of the certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/issuer">
+
+<auth:DisplayName>Issuer</auth:DisplayName>
+
+<auth:Description>The name of the certificate authority that issued the X.509 certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/issuername">
+
+<auth:DisplayName>Issuer Name</auth:DisplayName>
+
+<auth:Description>The distinguished name of the certificate issuer</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/keyusage">
+
+<auth:DisplayName>Key Usage</auth:DisplayName>
+
+<auth:Description>One of the key usages of the certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/notafter">
+
+<auth:DisplayName>Not After</auth:DisplayName>
+
+<auth:Description>Date in local time after which a certificate is no longer valid</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/notbefore">
+
+<auth:DisplayName>Not Before</auth:DisplayName>
+
+<auth:Description>The date in local time on which a certificate becomes valid</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatepolicy">
+
+<auth:DisplayName>Certificate Policies</auth:DisplayName>
+
+<auth:Description>The policies under which the certificate has been issued</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/rsa">
+
+<auth:DisplayName>Public Key</auth:DisplayName>
+
+<auth:Description>Public Key of the certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/rawdata">
+
+<auth:DisplayName>Certificate Raw Data</auth:DisplayName>
+
+<auth:Description>The raw data of the certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/san">
+
+<auth:DisplayName>Subject Alternative Name</auth:DisplayName>
+
+<auth:Description>One of the alternative names of the certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2008/06/identity/claims/serialnumber">
+
+<auth:DisplayName>Serial Number</auth:DisplayName>
+
+<auth:Description>The serial number of a certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/signaturealgorithm">
+
+<auth:DisplayName>Signature Algorithm</auth:DisplayName>
+
+<auth:Description>The algorithm used to create the signature of a certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/subject">
+
+<auth:DisplayName>Subject</auth:DisplayName>
+
+<auth:Description>The subject from the certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/subjectkeyidentifier">
+
+<auth:DisplayName>Subject Key Identifier</auth:DisplayName>
+
+<auth:Description>Describes the subject key identifier of the certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/subjectname">
+
+<auth:DisplayName>Subject Name</auth:DisplayName>
+
+<auth:Description>The subject distinguished name from a certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatetemplateinformation">
+
+<auth:DisplayName>V2 Template Name</auth:DisplayName>
+
+<auth:Description>The name of the version 2 certificate template used when issuing or renewing a certificate. The extension is Microsoft specific.</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatetemplatename">
+
+<auth:DisplayName>V1 Template Name</auth:DisplayName>
+
+<auth:Description>The name of the version 1 certificate template used when issuing or renewing a certificate. The extension is Microsoft specific.</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/thumbprint">
+
+<auth:DisplayName>Thumbprint</auth:DisplayName>
+
+<auth:Description>Thumbprint of the certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/12/certificatecontext/field/x509version">
+
+<auth:DisplayName>X.509 Version</auth:DisplayName>
+
+<auth:Description>The X.509 format version of a certificate</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork">
+
+<auth:DisplayName>Inside Corporate Network</auth:DisplayName>
+
+<auth:Description>Used to indicate if a request originated inside corporate network</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2012/01/passwordexpirationtime">
+
+<auth:DisplayName>Password Expiration Time</auth:DisplayName>
+
+<auth:Description>Used to display the time when the password expires</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2012/01/passwordexpirationdays">
+
+<auth:DisplayName>Password Expiration Days</auth:DisplayName>
+
+<auth:Description>Used to display the number of days to password expiry</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/ws/2012/01/passwordchangeurl">
+
+<auth:DisplayName>Update Password URL</auth:DisplayName>
+
+<auth:Description>Used to display the web address of update password service</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/claims/authnmethodsreferences">
+
+<auth:DisplayName>Authentication Methods References</auth:DisplayName>
+
+<auth:Description>Used to indicate all authentication methods used to authenticate the user</auth:Description>
+
+</auth:ClaimType>
+
+
+<auth:ClaimType xmlns:auth="http://docs.oasis-open.org/wsfed/authorization/200706" Optional="true" Uri="http://schemas.microsoft.com/2012/01/requestcontext/claims/client-request-id">
+
+<auth:DisplayName>Client Request ID</auth:DisplayName>
+
+<auth:Description>Identifier for a user session</auth:Description>
+
+</auth:ClaimType>
+
+</fed:ClaimTypesOffered>
+
+
+<fed:SecurityTokenServiceEndpoint>
+
+
+<EndpointReference xmlns="http://www.w3.org/2005/08/addressing">
+
+<Address>https://sgdlitvm0507.adfs.com/adfs/services/trust/2005/certificatemixed</Address>
+
+
+<Metadata>
+
+
+<Metadata xmlns="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+
+<wsx:MetadataSection xmlns="" Dialect="http://schemas.xmlsoap.org/ws/2004/09/mex">
+
+
+<wsx:MetadataReference>
+
+<Address xmlns="http://www.w3.org/2005/08/addressing">https://sgdlitvm0507.adfs.com/adfs/services/trust/mex</Address>
+
+</wsx:MetadataReference>
+
+</wsx:MetadataSection>
+
+</Metadata>
+
+</Metadata>
+
+</EndpointReference>
+
+</fed:SecurityTokenServiceEndpoint>
+
+
+<fed:PassiveRequestorEndpoint>
+
+
+<EndpointReference xmlns="http://www.w3.org/2005/08/addressing">
+
+<Address>https://sgdlitvm0507.adfs.com/adfs/ls/</Address>
+
+</EndpointReference>
+
+</fed:PassiveRequestorEndpoint>
+
+</RoleDescriptor>
+
+
+<SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol" WantAssertionsSigned="true">
+
+
+<KeyDescriptor use="encryption">
+
+
+<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+
+
+<X509Data>
+
+<X509Certificate>MIIC7DCCAdSgAwIBAgIQHrYCCfLrWKxMCxWrHTGhSzANBgkqhkiG9w0BAQsFADAyMTAwLgYDVQQDEydBREZTIEVuY3J5cHRpb24gLSBTR0RMSVRWTTA1MDcuYWRmcy5jb20wHhcNMTUwNzA4MDMzMzA1WhcNMTYwNzA3MDMzMzA1WjAyMTAwLgYDVQQDEydBREZTIEVuY3J5cHRpb24gLSBTR0RMSVRWTTA1MDcuYWRmcy5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDBYtEYWxqzzCbHlkCSMpeMpRNGw7eaf/OrzhJtpO3jx1b5zjfy9JC1RVxODeqqzF5TWXlrF40NqO8g8skG/2Aup4y9R+aISd0zXGXvQmv0W9TleP3yOoyedqbyVoFa8gNO6a2hbZSI8AWn5RrD7twCvfjCqpZsHpglFCSkWZuq96YfdVSLQ5amsF3YVIyQOz086gxVqkHFLbi+Apfy5VwLQES5RE9tSVrvLxigtSxGtrODdjYKcLu9hUxxjUtp0YHstqaMut+2WxdzT3wYgo79Naq31KYA8EIchaVU4vUtEHCn2yhGKYcz8OeKwUJE0zS6cjGjpvLnsVFf0b+1bac/AgMBAAEwDQYJKoZIhvcNAQELBQADggEBAD83yhtMNVAqgBx9QzbsfHH4WOMYowI/jGukoB+tUeBGEQsqxngNGjXGD0VmYWrvmr+1SxiuRScf7lQsj0m2Q+/upbqr0aFkZ7G9x04raeR84pXK0+iUqmvfN0EBzt0G9fIkt3gAi93Fg/pwHMWXcBcuJuVNnegnnK2t7Um5hbDlqkZRNpRWz48uSIzIsgodLYlW3D9L5hcKjNb3ZDSQYxFu7/giiRpu12a7jypbJpfE/FmdtwCeVFdKz54cPjmxlj5pY4tZMap/327DmAcfUP3DzzcMi0JGy06zXVLV6sx5sTP0LoHjTnimwf5rC6awtUfF03KMI6IYpdG10r3H3gA=</X509Certificate>
+
+</X509Data>
+
+</KeyInfo>
+
+</KeyDescriptor>
+
+
+<KeyDescriptor use="signing">
+
+
+<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+
+
+<X509Data>
+
+<X509Certificate>MIIC5jCCAc6gAwIBAgIQGqwRJvZiDaJLw5vNg2oiDjANBgkqhkiG9w0BAQsFADAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBTR0RMSVRWTTA1MDcuYWRmcy5jb20wHhcNMTUwNzA4MDMzMzA1WhcNMTYwNzA3MDMzMzA1WjAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBTR0RMSVRWTTA1MDcuYWRmcy5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDHLj6z79tUanT174UE6/5wepJsHcXA1zTPvlUQudKOlVhJvbu/bLMpFRoW/IsOO5hyhkbpX7gQEXcj4a4Hgk0if0qb8ozrQzSzGXjUaBWBLGJ4dF9xIiQq+G9KV0S9dUC+Y6Hb+t9y4+oJPAhlre1QO8scxMalAbH4Vp6c4V7XvlCFavT+dvYvrdtaFel/7vtKgnpt/+3M2KM3cnU56yppRMemI/qjpXmoSf9ZzgAC/jRIqH26bWSwgTf/zRuZ8ztPtuE0Qmc8JZJj3vT8OSVEthPlBJi6TLybaKHoRU1BcM4ZFQKviJEsiJ1Li1wOx5pkT2KYXAkQMN+jeMDyif8jAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAC7en6oMdrKmvoevtSTVW3vIRKgTrT+lCKTmv74gsQI81w2ZPE2RG8Vg9XZHlSCPfqwj4fSuCxsLCD3WbcUOyzm1wMxS6bjFvG4xukYKg8PHcy0C7DAo7X8M86L8/xEQP8pwbpz91hFGn+JSSjmwIy8O7AgcY9tLnNPKooePzygRw0JmooZrUUyGash8YhmaWO17JlyZNgl0iJJBoiKQtSLbHgyTneJ1BxxHSjpRpRpXV5PJubkLbfTb2qEvxS1rjtXJbWrxxtkqcmg4WAiyWOMxEX+sZ8pU+aCuBK6baI5QEDAJG3OF8gF8oDEaADBMIxHW65/2b9Qwptf0QYUD1DE=</X509Certificate>
+
+</X509Data>
+
+</KeyInfo>
+
+</KeyDescriptor>
+
+<SingleLogoutService Location="https://sgdlitvm0507.adfs.com/adfs/ls/" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"/>
+
+<SingleLogoutService Location="https://sgdlitvm0507.adfs.com/adfs/ls/" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"/>
+
+<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
+
+<NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
+
+<NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+
+<AssertionConsumerService Location="https://sgdlitvm0507.adfs.com/adfs/ls/" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" isDefault="true" index="0"/>
+
+<AssertionConsumerService Location="https://sgdlitvm0507.adfs.com/adfs/ls/" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Artifact" index="1"/>
+
+<AssertionConsumerService Location="https://sgdlitvm0507.adfs.com/adfs/ls/" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" index="2"/>
+
+</SPSSODescriptor>
+
+
+<IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+
+
+<KeyDescriptor use="encryption">
+
+
+<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+
+
+<X509Data>
+
+<X509Certificate>MIIC7DCCAdSgAwIBAgIQHrYCCfLrWKxMCxWrHTGhSzANBgkqhkiG9w0BAQsFADAyMTAwLgYDVQQDEydBREZTIEVuY3J5cHRpb24gLSBTR0RMSVRWTTA1MDcuYWRmcy5jb20wHhcNMTUwNzA4MDMzMzA1WhcNMTYwNzA3MDMzMzA1WjAyMTAwLgYDVQQDEydBREZTIEVuY3J5cHRpb24gLSBTR0RMSVRWTTA1MDcuYWRmcy5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDBYtEYWxqzzCbHlkCSMpeMpRNGw7eaf/OrzhJtpO3jx1b5zjfy9JC1RVxODeqqzF5TWXlrF40NqO8g8skG/2Aup4y9R+aISd0zXGXvQmv0W9TleP3yOoyedqbyVoFa8gNO6a2hbZSI8AWn5RrD7twCvfjCqpZsHpglFCSkWZuq96YfdVSLQ5amsF3YVIyQOz086gxVqkHFLbi+Apfy5VwLQES5RE9tSVrvLxigtSxGtrODdjYKcLu9hUxxjUtp0YHstqaMut+2WxdzT3wYgo79Naq31KYA8EIchaVU4vUtEHCn2yhGKYcz8OeKwUJE0zS6cjGjpvLnsVFf0b+1bac/AgMBAAEwDQYJKoZIhvcNAQELBQADggEBAD83yhtMNVAqgBx9QzbsfHH4WOMYowI/jGukoB+tUeBGEQsqxngNGjXGD0VmYWrvmr+1SxiuRScf7lQsj0m2Q+/upbqr0aFkZ7G9x04raeR84pXK0+iUqmvfN0EBzt0G9fIkt3gAi93Fg/pwHMWXcBcuJuVNnegnnK2t7Um5hbDlqkZRNpRWz48uSIzIsgodLYlW3D9L5hcKjNb3ZDSQYxFu7/giiRpu12a7jypbJpfE/FmdtwCeVFdKz54cPjmxlj5pY4tZMap/327DmAcfUP3DzzcMi0JGy06zXVLV6sx5sTP0LoHjTnimwf5rC6awtUfF03KMI6IYpdG10r3H3gA=</X509Certificate>
+
+</X509Data>
+
+</KeyInfo>
+
+</KeyDescriptor>
+
+
+<KeyDescriptor use="signing">
+
+
+<KeyInfo xmlns="http://www.w3.org/2000/09/xmldsig#">
+
+
+<X509Data>
+
+<X509Certificate>MIIC5jCCAc6gAwIBAgIQGqwRJvZiDaJLw5vNg2oiDjANBgkqhkiG9w0BAQsFADAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBTR0RMSVRWTTA1MDcuYWRmcy5jb20wHhcNMTUwNzA4MDMzMzA1WhcNMTYwNzA3MDMzMzA1WjAvMS0wKwYDVQQDEyRBREZTIFNpZ25pbmcgLSBTR0RMSVRWTTA1MDcuYWRmcy5jb20wggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDHLj6z79tUanT174UE6/5wepJsHcXA1zTPvlUQudKOlVhJvbu/bLMpFRoW/IsOO5hyhkbpX7gQEXcj4a4Hgk0if0qb8ozrQzSzGXjUaBWBLGJ4dF9xIiQq+G9KV0S9dUC+Y6Hb+t9y4+oJPAhlre1QO8scxMalAbH4Vp6c4V7XvlCFavT+dvYvrdtaFel/7vtKgnpt/+3M2KM3cnU56yppRMemI/qjpXmoSf9ZzgAC/jRIqH26bWSwgTf/zRuZ8ztPtuE0Qmc8JZJj3vT8OSVEthPlBJi6TLybaKHoRU1BcM4ZFQKviJEsiJ1Li1wOx5pkT2KYXAkQMN+jeMDyif8jAgMBAAEwDQYJKoZIhvcNAQELBQADggEBAC7en6oMdrKmvoevtSTVW3vIRKgTrT+lCKTmv74gsQI81w2ZPE2RG8Vg9XZHlSCPfqwj4fSuCxsLCD3WbcUOyzm1wMxS6bjFvG4xukYKg8PHcy0C7DAo7X8M86L8/xEQP8pwbpz91hFGn+JSSjmwIy8O7AgcY9tLnNPKooePzygRw0JmooZrUUyGash8YhmaWO17JlyZNgl0iJJBoiKQtSLbHgyTneJ1BxxHSjpRpRpXV5PJubkLbfTb2qEvxS1rjtXJbWrxxtkqcmg4WAiyWOMxEX+sZ8pU+aCuBK6baI5QEDAJG3OF8gF8oDEaADBMIxHW65/2b9Qwptf0QYUD1DE=</X509Certificate>
+
+</X509Data>
+
+</KeyInfo>
+
+</KeyDescriptor>
+
+<SingleLogoutService Location="https://sgdlitvm0507.adfs.com/adfs/ls/" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"/>
+
+<SingleLogoutService Location="https://sgdlitvm0507.adfs.com/adfs/ls/" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"/>
+
+<NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
+
+<NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</NameIDFormat>
+
+<NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
+
+<SingleSignOnService Location="https://sgdlitvm0507.adfs.com/adfs/ls/" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect"/>
+
+<SingleSignOnService Location="https://sgdlitvm0507.adfs.com/adfs/ls/" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="E-Mail Address" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Given Name" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Name" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="UPN" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/upn"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Common Name" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.xmlsoap.org/claims/CommonName"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="AD FS 1.x E-Mail Address" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.xmlsoap.org/claims/EmailAddress"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Group" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.xmlsoap.org/claims/Group"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="AD FS 1.x UPN" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.xmlsoap.org/claims/UPN"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Role" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/role"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Surname" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="PPID" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/privatepersonalidentifier"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Name ID" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Authentication time stamp" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationinstant"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Authentication method" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Deny only group SID" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/denyonlysid"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Deny only primary SID" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/denyonlyprimarysid"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Deny only primary group SID" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/denyonlyprimarygroupsid"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Group SID" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/groupsid"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Primary group SID" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/primarygroupsid"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Primary SID" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/primarysid"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Windows account name" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/windowsaccountname"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Is Registered User" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/01/devicecontext/claims/isregistereduser"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Device Identifier" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/01/devicecontext/claims/identifier"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Device Registration Identifier" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/01/devicecontext/claims/registrationid"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Device Registration DisplayName" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/01/devicecontext/claims/displayname"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Device OS type" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/01/devicecontext/claims/ostype"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Device OS Version" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/01/devicecontext/claims/osversion"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Is Managed Device" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/01/devicecontext/claims/ismanaged"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Forwarded Client IP" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-forwarded-client-ip"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Client Application" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-application"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Client User Agent" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-user-agent"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Client IP" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-client-ip"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Endpoint Path" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-endpoint-absolute-path"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Proxy" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/01/requestcontext/claims/x-ms-proxy"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Application Identifier" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/01/requestcontext/claims/relyingpartytrustid"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Application policies" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/12/certificatecontext/extension/applicationpolicy"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Authority Key Identifier" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/12/certificatecontext/extension/authoritykeyidentifier"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Basic Constraint" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/12/certificatecontext/extension/basicconstraints"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Enhanced Key Usage" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/12/certificatecontext/extension/eku"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Issuer" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/12/certificatecontext/field/issuer"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Issuer Name" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/12/certificatecontext/field/issuername"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Key Usage" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/12/certificatecontext/extension/keyusage"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Not After" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/12/certificatecontext/field/notafter"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Not Before" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/12/certificatecontext/field/notbefore"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Certificate Policies" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatepolicy"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Public Key" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/rsa"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Certificate Raw Data" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/12/certificatecontext/field/rawdata"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Subject Alternative Name" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/12/certificatecontext/extension/san"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Serial Number" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/serialnumber"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Signature Algorithm" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/12/certificatecontext/field/signaturealgorithm"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Subject" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/12/certificatecontext/field/subject"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Subject Key Identifier" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/12/certificatecontext/extension/subjectkeyidentifier"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Subject Name" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/12/certificatecontext/field/subjectname"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="V2 Template Name" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatetemplateinformation"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="V1 Template Name" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/12/certificatecontext/extension/certificatetemplatename"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Thumbprint" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/thumbprint"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="X.509 Version" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/12/certificatecontext/field/x509version"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Inside Corporate Network" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/ws/2012/01/insidecorporatenetwork"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Password Expiration Time" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/ws/2012/01/passwordexpirationtime"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Password Expiration Days" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/ws/2012/01/passwordexpirationdays"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Update Password URL" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/ws/2012/01/passwordchangeurl"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Authentication Methods References" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/claims/authnmethodsreferences"/>
+
+<Attribute xmlns="urn:oasis:names:tc:SAML:2.0:assertion" FriendlyName="Client Request ID" NameFormat="urn:oasis:names:tc:SAML:2.0:attrname-format:uri" Name="http://schemas.microsoft.com/2012/01/requestcontext/claims/client-request-id"/>
+
+</IDPSSODescriptor>
+
+</EntityDescriptor>

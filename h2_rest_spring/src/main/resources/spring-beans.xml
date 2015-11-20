@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="dateFormat" class="java.text.SimpleDateFormat">
+		<constructor-arg value="yyyy-MM-dd" />
+	</bean>
+  <bean id="StudentAddListener" class="org.third.spring.listener_event.StudentAddListener"></bean>
+
+	<bean name="defaultUserBean" class="org.third.spring.dto.UserInfo">
+		<property name="userName" value="anonymous"></property>
+		<property name="salary" value="1000.00"></property>
+		<property name="vip" value="false"></property>
+		<property name="id" value="-1"></property>
+		<property name="birthday">
+			<bean factory-bean="dateFormat" factory-method="parse">
+				<constructor-arg value="1985-06-01" />
+			</bean>
+		</property>
+	</bean>
+</beans>

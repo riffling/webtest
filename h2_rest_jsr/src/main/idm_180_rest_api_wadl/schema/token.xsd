@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="token" type="tokenValidationResponse"/>
+
+  <xs:complexType name="tokenValidationResponse">
+    <xs:sequence/>
+    <xs:attribute name="valid" type="xs:boolean" use="required"/>
+    <xs:attribute name="code" type="tokenValidationCode"/>
+  </xs:complexType>
+
+  <xs:simpleType name="tokenValidationCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="EXPIRED"/>
+      <xs:enumeration value="DECODING_FAIL"/>
+      <xs:enumeration value="MISSING_REQUIRED_CLAIMS"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+

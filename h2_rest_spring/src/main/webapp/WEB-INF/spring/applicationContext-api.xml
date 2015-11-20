@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
+        <property name="useSuffixPatternMatch" value="false" />
+    </bean>
+
+    <bean id="loginOrgInfoController" class="com.hp.ccue.identity.web.api.OrganizationInfoController">
+    </bean>
+
+    <bean id="versionInfoController" class="com.hp.ccue.identity.web.api.VersionInfoController">
+    </bean>
+</beans>

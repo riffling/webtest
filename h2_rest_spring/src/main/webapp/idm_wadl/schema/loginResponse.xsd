@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="loginResponse" type="loginResponse"/>
+
+  <xs:complexType name="loginResponse">
+    <xs:sequence/>
+  </xs:complexType>
+</xs:schema>
+

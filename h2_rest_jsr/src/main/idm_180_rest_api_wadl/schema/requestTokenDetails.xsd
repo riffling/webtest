@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="requestTokenDetails" type="requestTokenDetails"/>
+
+  <xs:complexType name="requestTokenDetails">
+    <xs:sequence/>
+    <xs:attribute name="expired" type="xs:boolean"/>
+    <xs:attribute name="supportsErrorCallback" type="xs:boolean"/>
+  </xs:complexType>
+</xs:schema>
+
