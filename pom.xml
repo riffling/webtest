@@ -150,11 +150,7 @@
         </dependency>
     </dependencies> -->
     <modules>
-        <module>spring_security</module>
-        <module>hello1</module>
-        <module>hello2</module>
-        <module>hello3</module>
-        <module>hello4</module>
+        <module>h10_mvn</module>
     </modules>
     <build>
         <plugins>

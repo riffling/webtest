@@ -1,6 +1,7 @@
 target/
 .idea/
 *.iml
+*.war
 node_modules
 build/
 generated/

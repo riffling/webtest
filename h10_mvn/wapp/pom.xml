@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.mvntest</groupId>
+    <artifactId>mvn_demo</artifactId>
+    <version>1.0</version>
+  </parent>
+  <artifactId>wapp</artifactId>
+  <packaging>war</packaging>
+  <dependencies>
+      <dependency>
+          <groupId>org.mvntest</groupId>
+          <artifactId>dapp</artifactId>
+          <version>1.0</version>
+      </dependency>
+      <dependency>
+          <groupId>com.hp.cloud.identity</groupId>
+          <artifactId>idm-service-ui</artifactId>
+      </dependency>
+  </dependencies>
+  <dependencyManagement>
+      <dependencies>
+          <dependency>
+              <groupId>com.hp.cloud.identity</groupId>
+              <artifactId>idm-service-ui</artifactId>
+              <version>1.8.0-SNAPSHOT</version>
+          </dependency>
+      </dependencies>
+  </dependencyManagement>
+  
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>1.3.1</version>
+                <executions>
+                <!--
+                   Goal:
+                    aggregate:    Runs dependency-check against the child projects and aggregates the results into a single report.
+                    check:        Runs dependency-check against the project and generates a report.
+                    update-only:  Updates the local cache of the NVD data from NIST.
+                    purge:        Deletes the local copy of the NVD. This is used to force a refresh of the data. 
+                 -->
+                 <!-- Create the DependencyCheck-report.html in the target directory.                  -->
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

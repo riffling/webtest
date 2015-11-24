@@ -1,0 +1,109 @@
+<project>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.owasp</groupId>
+                <artifactId>dependency-check-maven</artifactId>
+                <version>1.3.1</version>
+                <configuration>
+                <!--http://jeremylong.github.io/DependencyCheck/index.html
+                 
+                Configuration:
+                    aggregate:       Deprecated - use the aggregate goal instead.   
+                    autoUpdate:      Sets whether auto-updating of the NVD CVE/CPE data is enabled. It is not recommended that this be turned to false.  true
+                    outputDirectory: The location to write the report(s). Note, this is not used if generating the report as part of a mvn site build  ‘target’
+                    failBuildOnCVSS: Specifies if the build should be failed if a CVSS score above a specified level is identified. The default is 11 which means since the CVSS scores are 0-10, by default the build will never fail.  11
+                    format:          The report format to be generated (HTML, XML, VULN, ALL). This configuration option has no affect if using this within the Site plugin unless the externalReport is set to true.  HTML
+                    suppressionFile: The file path to the XML suppression file - used to suppress false positives   
+                    skipTestScope:   Should be skip analysis for artifacts with Test Scope true
+                    skipProvidedScope: Should be skip analysis for artifacts with Provided Scope false
+                    skipRuntimeScope:  Should be skip analysis for artifacts with Runtime Scope
+                 -->
+                 <!--Analyzer Configuration
+                 
+                    archiveAnalyzerEnabled Sets whether the Archive Analyzer will be used. true
+                    zipExtensions A comma-separated list of additional file extensions to be treated like a ZIP file, the contents will be extracted and analyzed.   
+                    jarAnalyzer Sets whether Jar Analyzer will be used. true
+                    centralAnalyzerEnabled  Sets whether Central Analyzer will be used. If this analyzer is being disabled there is a good chance you also want to disable the Nexus Analyzer (see below).  true
+                    nexusAnalyzerEnabled  Sets whether Nexus Analyzer will be used. This analyzer is superceded by the Central Analyzer; however, you can configure this to run against a Nexus Pro installation. true
+                    nexusUrl  Defines the Nexus Server’s web service end point (example http://domain.enterprise/service/local/). If not set the Nexus Analyzer will be disabled.  
+                    nexusUsesProxy  Whether or not the defined proxy should be used when connecting to Nexus. true
+                    nuspecAnalyzerEnabled Sets whether or not the .NET Nuget Nuspec Analyzer will be used.  true
+                    assemblyAnalyzerEnabled Sets whether or not the .NET Assembly Analyzer should be used.  true
+                    pathToMono  The path to Mono for .NET assembly analysis on non-windows systems. 
+                  -->
+                  <!--Advanced Configuration
+                    cveUrl12Modified  URL for the modified CVE 1.2. http://nvd.nist.gov/download/nvdcve-modified.xml
+                    cveUrl20Modified  URL for the modified CVE 2.0. http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-modified.xml
+                    cveUrl12Base  Base URL for each year’s CVE 1.2, the %d will be replaced with the year.  http://nvd.nist.gov/download/nvdcve-%d.xml
+                    cveUrl20Base  Base URL for each year’s CVE 2.0, the %d will be replaced with the year.  http://static.nvd.nist.gov/feeds/xml/cve/nvdcve-2.0-%d.xml
+                    connectionTimeout Sets the URL Connection Timeout used when downloading external data.   
+                    dataDirectory Sets the data directory to hold SQL CVEs contents. This should generally not be changed.   
+                    databaseDriverName  The name of the database driver. Example: org.h2.Driver.   
+                    databaseDriverPath  The path to the database driver JAR file; only used if the driver is not in the class path.  
+                    connectionString  The connection string used to connect to the database.   
+                    databaseUser  The username used when connecting to the database.   
+                    databasePassword  The password used when connecting to the database.   
+                    metaFileName  Sets the name of the file to use for storing the metadata about the project.  dependency-check.ser 
+                   -->
+                   <!-- Proxy Configuration
+                    mavenSettingsProxyId The id for the proxy, configured via settings.xml, that dependency-check should use.   
+                    -->
+                    
+                    <!-- Create the DependencyCheck-report.html and fail the build for CVSS greater then 8. -->
+                    <failBuildOnCVSS>8</failBuildOnCVSS>
+
+                    <!-- Create the DependencyCheck-report.html and skip artifacts not bundled in distribution (Provided and Runtime scope). -->
+                    <skipProvidedScope>true</skipProvidedScope>
+                    <skipRuntimeScope>true</skipRuntimeScope>
+
+                    <!-- Create the DependencyCheck-report.html and use internal mirroring of CVE contents. -->
+                    <cveUrl12Modified>http://internal-mirror.mycorp.com/downloads/nist/nvdcve-modified.xml</cveUrl12Modified>
+                    <cveUrl20Modified>http://internal-mirror.mycorp.com/downloads/nist/nvdcve-2.0-modified.xml</cveUrl20Modified>
+                    <cveUrl12Base>http://internal-mirror.mycorp.com/downloads/nist/nvdcve-%d.xml</cveUrl12Base>
+                    <cveUrl20Base>http://internal-mirror.mycorp.com/downloads/nist/nvdcve-2.0-%d.xml</cveUrl20Base>
+                </configuration>
+                <executions>
+                <!--
+                   Goal:
+                    aggregate:    Runs dependency-check against the child projects and aggregates the results into a single report.
+                    check:        Runs dependency-check against the project and generates a report.
+                    update-only:  Updates the local cache of the NVD data from NIST.
+                    purge:        Deletes the local copy of the NVD. This is used to force a refresh of the data. 
+                 -->
+                 <!-- Create the DependencyCheck-report.html in the target directory.                  -->
+                    <execution>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                    <!-- Update the local cache of the NVD data from NIST without analyzing the dependencies. -->
+                    <execution>
+                        <goals>
+                            <goal>update-only</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <reporting>
+        <plugins>
+            <plugin>
+                <plugin>
+                    <!-- Create an aggregated dependency-check report within the site. -->
+                    <groupId>org.owasp</groupId>
+                    <artifactId>dependency-check-maven</artifactId>
+                    <version>1.3.1</version>
+                    <reportSets>
+                        <reportSet>
+                            <reports>
+                                <report>aggregate</report>
+                            </reports>
+                        </reportSet>
+                    </reportSets>
+                </plugin>
+            </plugin>
+        </plugins>
+    </reporting>
+</project>

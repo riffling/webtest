@@ -3,40 +3,40 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>org.mvntest</groupId>
-        <artifactId>demo</artifactId>
+        <artifactId>mvn_demo</artifactId>
         <version>1.0</version>
     </parent>
     <artifactId>dapp</artifactId>
-    <repositories>  
-    <repository>  
-        <id>jboss-cache</id>  
-        <name>jboss-cache</name>  
-        <url>http://repository.jboss.org/maven2</url>  
-    </repository>  
-    <repository>  
-        <id>mvnsearch</id>  
-        <name>mvnsearch Maven Repository</name>  
-        <url>http://www.mvnsearch.org/maven2</url>  
-    </repository>  
-    <repository>  
-        <id>ibiblio</id>  
-        <name>ibiblio Maven Repository</name>  
-        <url>http://www.ibiblio.org/maven2</url>  
-    </repository>  
-    <repository>  
-        <id>mirrors.ibiblio</id>  
-        <name>mirrors.ibiblio Maven Repository</name>  
-        <url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>  
-    </repository>  
-    <repository>  
-        <id>repo.springsource.org</id>  
-        <name>repo.springsource.org-releases</name>  
-        <url>http://repo.springsource.org/libs-milestone-local</url>  
-        <snapshots>  
-            <enabled>false</enabled>  
-        </snapshots>  
-    </repository>  
-</repositories>  
+    <repositories>
+        <repository>
+            <id>jboss-cache</id>
+            <name>jboss-cache</name>
+            <url>http://repository.jboss.org/maven2</url>
+        </repository>
+        <repository>
+            <id>mvnsearch</id>
+            <name>mvnsearch Maven Repository</name>
+            <url>http://www.mvnsearch.org/maven2</url>
+        </repository>
+        <repository>
+            <id>ibiblio</id>
+            <name>ibiblio Maven Repository</name>
+            <url>http://www.ibiblio.org/maven2</url>
+        </repository>
+        <repository>
+            <id>mirrors.ibiblio</id>
+            <name>mirrors.ibiblio Maven Repository</name>
+            <url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
+        </repository>
+        <repository>
+            <id>repo.springsource.org</id>
+            <name>repo.springsource.org-releases</name>
+            <url>http://repo.springsource.org/libs-milestone-local</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
     <build>
         <sourceDirectory>src</sourceDirectory>
         <resources>
@@ -44,7 +44,7 @@
                 <directory>src/main/resources</directory>
             </resource>
         </resources>
-        
+
         <testSourceDirectory>test</testSourceDirectory>
         <testResources>
             <testResource>
@@ -71,59 +71,65 @@
                 </configuration>
             </plugin>
             <plugin>
-               <groupId>org.apache.maven.plugins</groupId>
-               <artifactId>maven-jar-plugin</artifactId>
-               <goals>
-                   <goal>jar</goal>
-               </goals>
-               <configuration>
-                   <archive>
-                       <manifest>
-                           <mainClass>org.mvntest.dapp.HelloWorld</mainClass>
-                           <addClasspath>true</addClasspath>
-                       </manifest>
-                   </archive>
-               </configuration>
-           </plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <goals>
+                    <goal>jar</goal>
+                </goals>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>org.mvntest.dapp.HelloWorld</mainClass>
+                            <addClasspath>true</addClasspath>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.4.0</version>
                 <executions>
-                <execution>
-                  <!--  When "mvn test" executed,  mvn exec:java will be executed -->
-                  <phase>test</phase>
-                  <goals>
-                      <goal>java</goal>
-                  </goals>
-                  <configuration>
-                    <!--
-                     mvn exec:java -Dexec.mainClass="org.mvntest.dapp.HelloWorld" -Dexec.classpathScope=runtime 
-                      mvn exec:java -Dexec.mainClass="org.mvntest.dapp.HelloWorld" -Dexec:args="a1 a2" -Dexec.classpathScope=runtime
-                      mvn exec:java -Dexec.mainClass="org.mvntest.dapp.HelloWorld" -Dexec:arguments="a1 a2" -Dexec.classpathScope=runtime
-                    -->
-                    <mainClass>org.mvntest.dapp.HelloWorld</mainClass>
-                    <arguments>
-                        <argument>test1</argument>
-                        <argument>test2</argument>
-                    </arguments>
-                  </configuration>
-                </execution>
+                    <execution>
+                        <!-- When "mvn test" executed, mvn exec:java will be executed -->
+                        <phase>test</phase>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                        <configuration>
+                            <!-- mvn exec:java -Dexec.mainClass="org.mvntest.dapp.HelloWorld" -Dexec.classpathScope=runtime mvn exec:java -Dexec.mainClass="org.mvntest.dapp.HelloWorld" 
+                                -Dexec:args="a1 a2" -Dexec.classpathScope=runtime mvn exec:java -Dexec.mainClass="org.mvntest.dapp.HelloWorld" -Dexec:arguments="a1 a2" -Dexec.classpathScope=runtime -->
+                            <mainClass>org.mvntest.dapp.HelloWorld</mainClass>
+                            <arguments>
+                                <argument>test1</argument>
+                                <argument>test2</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
                 </executions>
-                 <configuration>
-                <!--    
-                     mvn exec:java -Dexec.mainClass="org.mvntest.dapp.HelloWorld" -Dexec.classpathScope=runtime 
-                      mvn exec:java -Dexec.mainClass="org.mvntest.dapp.HelloWorld" -Dexec:args="a1 a2" -Dexec.classpathScope=runtime
-                      mvn exec:java -Dexec.mainClass="org.mvntest.dapp.HelloWorld" -Dexec:arguments="a1 a2" -Dexec.classpathScope=runtime
-                   -->
+                <configuration>
+                    <!-- mvn exec:java -Dexec.mainClass="org.mvntest.dapp.HelloWorld" -Dexec.classpathScope=runtime mvn exec:java -Dexec.mainClass="org.mvntest.dapp.HelloWorld" 
+                        -Dexec:args="a1 a2" -Dexec.classpathScope=runtime mvn exec:java -Dexec.mainClass="org.mvntest.dapp.HelloWorld" -Dexec:arguments="a1 a2" -Dexec.classpathScope=runtime -->
                     <mainClass>org.mvntest.dapp.HelloWorld</mainClass>
                     <args>
                         <argument>test1</argument>
                         <argument>test2</argument>
                     </args>
-                </configuration> 
+                </configuration>
             </plugin>
         </plugins>
     </build>
+    <dependencies>
+        <dependency>
+            <groupId>org.jasypt</groupId>
+            <artifactId>jasypt</artifactId>
+            <version>1.9.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jasypt</groupId>
+            <artifactId>jasypt-spring3</artifactId>
+            <version>1.9.1</version>
+        </dependency>
+    </dependencies>
 </project>
